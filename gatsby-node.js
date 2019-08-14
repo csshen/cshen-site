@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next,
+        next
       },
     })
   })

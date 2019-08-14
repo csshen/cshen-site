@@ -1,12 +1,16 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React, { Component } from 'react';
+import { Link, graphql } from 'gatsby';
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { Divider, Typography } from 'antd';
+import 'antd/dist/antd.css';
+import './style.css';
 
-class BlogIndex extends React.Component {
+const { Text } = Typography;
+
+class BlogIndex extends Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -16,34 +20,33 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
+        <Link>About</Link><br/>
+        <Link>Projects</Link><br/>
+        <Link to='/travel'>Travel</Link><br/>
+        <Link></Link>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+
           return (
             <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <div className='snippet'>
+                  <Divider orientation='left'>{title}</Divider>
+                  <small><Text type="secondary">{node.frontmatter.date}</Text></small>
+                  <br />
+                  <Text>{ node.frontmatter.description || node.excerpt }</Text>
+                  {/* display tags here eventually */}
+                </div>
+              </Link>
             </div>
-          )
+          );
         })}
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -68,4 +71,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
