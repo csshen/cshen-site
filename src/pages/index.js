@@ -23,7 +23,7 @@ class BlogIndex extends Component {
         <Link>About</Link><br/>
         <Link>Projects</Link><br/>
         <Link to='/travel'>Travel</Link><br/>
-        <Link></Link>
+        
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
 

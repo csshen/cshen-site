@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import WorldMap from '../components/worldmap';
+import WorldMap from '../components/world-map';
 import { Tabs, Tag } from 'antd';
 
 const { TabPane } = Tabs;
