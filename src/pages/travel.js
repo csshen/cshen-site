@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import WorldMap from '../components/worldmap';
 import { Tabs, Tag } from 'antd';
