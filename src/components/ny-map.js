@@ -8,8 +8,6 @@ import {
   Marker,
 } from 'react-simple-maps';
 
-import visited from '../config/map-metadata';
-
 const wrapperStyles = {
   width: "100%",
   maxWidth: 980,
@@ -23,57 +21,42 @@ const strokeColor = '#607D8B';
 const strokeWidth = 0.75;
 
 
+const visited = new Set(['Nassau', 'Suffolk', 'Kings', 'Queens']);
 
-class WorldMap extends Component {
+
+class NYMap extends Component {
   render() {
+    let scale = 8500;
+    let center = [-76, 42.9];
     let visitedColor = this.props.color[0];
     let hoverColor = this.props.color[1];
-
-    let v, scale, center;
-    if (this.props.continent === 'europe') {
-      scale = 2000;
-      v = new Set(visited.europe_iso);
-      center = [10, 49];
-    } else if (this.props.continent === 'asia') {
-      scale = 900;
-      v = new Set(visited.asia_iso);
-      center = [95, 30];
-    } else if (this.props.continent === 'northAmerica') {
-      scale = 800;
-      center = [-100, 50];
-      v = new Set(visited.north_america_iso);
-    } else if (this.props.continent === 'southAmerica') {
-      scale = 800;
-      center = [-74.0563123, -15];
-      v = new Set(visited.south_america_iso);
-    }
 
     return (
       <div style={wrapperStyles}>
         <ComposableMap
+          projection='mercator'
           projectionConfig={{ scale: scale }}
           width={1400}
           height={1000}
           style={{ width: "100%", height: "auto" }}
         >
           <ZoomableGroup center={center} disablePanning>
-            <Geographies geography='/topojson/world-50m.json'>
+            <Geographies geography='/topojson/ny-36-new-york-counties.json'>
               {(geographies, projection) =>
-                geographies.map((geography, i) => geography.id !== -1 && (
-
+                geographies.map((geography, i) => (
                     <Geography
                       key={i}
                         geography={geography}
                         projection={projection}
                         style={{
                           default: {
-                            fill: v.has(geography.id) ? visitedColor : '#ECEFF1',
+                            fill: visited.has(geography.properties.NAME) ? visitedColor : '#ECEFF1',
                             stroke: strokeColor,
                             strokeWidth: strokeWidth,
                             outline: 'none',
                           },
                           hover: {
-                            fill: v.has(geography.id) ? hoverColor : '#CFD8DC',
+                            fill: visited.has(geography.properties.NAME) ? hoverColor : '#CFD8DC',
                             stroke: strokeColor,
                             strokeWidth: strokeWidth,
                             outline: 'none',
@@ -96,4 +79,4 @@ class WorldMap extends Component {
   }
 }
 
-export default WorldMap;
+export default NYMap;

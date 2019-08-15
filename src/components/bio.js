@@ -54,8 +54,9 @@ const Bio = () => {
         }}
       />
       <p>
-        Hi! I'm <strong>{author}</strong>. This page is currently
-        under construction. Stay tuned.
+        Hi! I'm <strong>{author}</strong>. This entire site is currently
+        under construction. Things are a bit messy right now, but
+        I'm working on fixing that. Stay tuned.
         {` `}
         {/*
         <a href={`https://twitter.com/${social.twitter}`}>

@@ -18,12 +18,12 @@ class BlogIndex extends Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Home" />
         <Bio />
         <Link>About</Link><br/>
         <Link>Projects</Link><br/>
-        <Link to='/travel'>Travel</Link><br/>
-        
+        <Link to='/maps'>7 Maps</Link><br/>
+
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
 
