@@ -13,6 +13,7 @@ class BlogPostTemplate extends Component {
     const { previous, next } = this.props.pageContext
 
     console.log(post.frontmatter.tags);
+    console.log('TEST');
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -74,7 +75,7 @@ class BlogPostTemplate extends Component {
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -95,4 +96,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

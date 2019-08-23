@@ -42,28 +42,32 @@ const visited = {
     'Maine',
     'New Hampshire',
     'New York',
+    'New Jersey',
     'Pennsylvania',
     'Connecticut',
+    'Massachusetts',
     'Virginia',
     'North Carolina',
-    'South Carolina',
     'Tennessee',
     'Georgia',
     'Florida',
     'Arizona',
     'Nevada',
-    'California',
+    'California'
   ],
   us_cities: [
-    'New York City',
+    'New York',
     'Atlanta',
     'Los Angeles'
   ],
   us_cities_markers: [
-    {markerOffset: 45, name: 'New York City', coordinates: [-74.0060, 40.7128]},
+    {markerOffset: 45, name: 'New York', coordinates: [-74.0060, 40.7128]},
     {markerOffset: -25, name: 'Los Angeles', coordinates: [-118.2437, 34.0522]},
     {markerOffset: -25, name: 'Atlanta', coordinates: [-84.3880, 33.7490]},
-  ]
+  ],
+  // , 'Suffolk', 'Kings', 'Queens'
+  new_york_counties: ['Nassau']
+
 };
 
 export default visited;

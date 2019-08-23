@@ -7,6 +7,7 @@ import {
   Markers,
   Marker,
 } from 'react-simple-maps';
+import visited from '../config/map-metadata';
 
 const wrapperStyles = {
   width: "100%",
@@ -21,7 +22,7 @@ const strokeColor = '#607D8B';
 const strokeWidth = 0.75;
 
 
-const visited = new Set(['Nassau', 'Suffolk', 'Kings', 'Queens']);
+const include = new Set(visited.new_york_counties);
 
 
 class NYMap extends Component {
@@ -50,13 +51,13 @@ class NYMap extends Component {
                         projection={projection}
                         style={{
                           default: {
-                            fill: visited.has(geography.properties.NAME) ? visitedColor : '#ECEFF1',
+                            fill: include.has(geography.properties.NAME) ? visitedColor : '#ECEFF1',
                             stroke: strokeColor,
                             strokeWidth: strokeWidth,
                             outline: 'none',
                           },
                           hover: {
-                            fill: visited.has(geography.properties.NAME) ? hoverColor : '#CFD8DC',
+                            fill: include.has(geography.properties.NAME) ? hoverColor : '#CFD8DC',
                             stroke: strokeColor,
                             strokeWidth: strokeWidth,
                             outline: 'none',

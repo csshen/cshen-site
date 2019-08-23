@@ -3,44 +3,45 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Profile from '../components/profile';
 
-import { Divider, Typography } from 'antd';
+import { Divider, Typography, Icon, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 import './style.css';
 
 const { Text } = Typography;
 
 class BlogIndex extends Component {
+
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Home" />
+        <SEO title='Home' />
         <Bio />
-        <Link>About</Link><br/>
-        <Link>Projects</Link><br/>
-        <Link to='/maps'>7 Maps</Link><br/>
 
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+        <Row type='flex' justify='start' align='middle'>
+          <Link to='/about' className='links'>About</Link>
+          <Icon type='arrow-left' style={{ margin: '1em'}} />
+          Find out more about me.
+        </Row>
 
-          return (
-            <div key={node.fields.slug}>
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                <div className='snippet'>
-                  <Divider orientation='left'>{title}</Divider>
-                  <small><Text type="secondary">{node.frontmatter.date}</Text></small>
-                  <br />
-                  <Text>{ node.frontmatter.description || node.excerpt }</Text>
-                  {/* display tags here eventually */}
-                </div>
-              </Link>
-            </div>
-          );
-        })}
+        <Row type='flex' justify='end' align='middle'>
+        Check out some of the things I'm currently working on.
+          <Icon type='arrow-right' style={{ margin: '1em'}} />
+          <Link to='/projects' className='links'>Projects</Link>
+        </Row>
+
+        <Row type='flex' justify='start' align='middle'>
+          <Link to='/posts' className='links'>Posts</Link>
+          <Icon type='arrow-left' style={{ margin: '1em'}} />
+          Blog posts stuff im doing
+        </Row>
+        <Profile />
+
+
       </Layout>
     )
   }
@@ -53,21 +54,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
       }
     }
   }

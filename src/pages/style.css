@@ -1,3 +1,21 @@
+/**/
+.links:hover {
+  text-decoration: underline;
+}
+
+.icon-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 24px;
+}
+
+.icon-up {
+    transition: transform .2s ease-out;
+}
+.icon-up:hover {
+  transform: translate(0, -0.15em);
+}
+
 
 .snippet:hover {
   background-color: #F5F5F5;

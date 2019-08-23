@@ -4,8 +4,7 @@ import {
   ZoomableGroup,
   Geographies,
   Geography,
-  Markers,
-  Marker,
+  Annotation
 } from 'react-simple-maps';
 
 import visited from '../config/map-metadata';
@@ -22,14 +21,13 @@ const wrapperStyles = {
 const strokeColor = '#607D8B';
 const strokeWidth = 0.75;
 
-
-
 class WorldMap extends Component {
+
   render() {
     let visitedColor = this.props.color[0];
     let hoverColor = this.props.color[1];
 
-    let v, scale, center;
+    let v, scale, center, anno;
     if (this.props.continent === 'europe') {
       scale = 2000;
       v = new Set(visited.europe_iso);
