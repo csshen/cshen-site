@@ -20,7 +20,7 @@ class Projects extends Component {
         Projects here
         <Card
           hoverable
-          style={{ width: 240 }}
+          style={{ width: 150 }}
           cover={<img alt="example" src="https://a.pololu-files.com/picture/0J3125.1200.jpg" />}
         >
           <Meta title="Mbed stuff" description="www.instagram.com" />

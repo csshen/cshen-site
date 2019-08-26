@@ -46,6 +46,7 @@ const visited = {
     'Pennsylvania',
     'Connecticut',
     'Massachusetts',
+    'Rhode Island',
     'Virginia',
     'North Carolina',
     'Tennessee',
