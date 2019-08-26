@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
@@ -17,7 +18,6 @@ class Projects extends Component {
       <Layout location={location} title={siteTitle}>
         <SEO title='projects' />
         <Title>Projects</Title>
-        Projects here
         <Card
           hoverable
           style={{ width: 150 }}
@@ -41,3 +41,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+*/
