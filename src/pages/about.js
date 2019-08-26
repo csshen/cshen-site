@@ -1,4 +1,3 @@
-/*
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
@@ -16,7 +15,7 @@ class About extends Component {
       <Layout location={location} title={siteTitle}>
         <SEO title='About' />
         <Title>About</Title>
-        <Link to={location.pathname + '/maps'}>Maps</Link>
+        <Link to={`${location.pathname}/maps`}>Maps</Link>
       </Layout>
     );
   }
@@ -33,4 +32,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-*/

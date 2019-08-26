@@ -1,4 +1,3 @@
-/*
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
 import Bio from '../components/bio';
@@ -34,7 +33,7 @@ class Posts extends Component {
                   <small><Text type="secondary">{node.frontmatter.date}</Text></small>
                   <br />
                   <Text>{ node.frontmatter.description || node.excerpt }</Text>
-
+                  {/* display tags here eventually */}
                 </div>
               </Link>
             </div>
@@ -71,4 +70,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-*/
