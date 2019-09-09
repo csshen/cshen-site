@@ -3,9 +3,9 @@ module.exports = {
     title: `Chris Shen`,
     author: `Chris Shen`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://chrisshen.xyz`,
+    siteUrl: `https://www.chrisshen.xyz`,
     social: {
-      twitter: `chrisshen`,
+      twitter: `chrisshen8`,
     },
   },
   plugins: [
