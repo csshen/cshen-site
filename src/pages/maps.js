@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../../components/layout';
-import SEO from '../../components/seo';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import WorldMap from '../../components/world-map';
-import USMap from '../../components/us-map';
-import NYMap from '../../components/ny-map';
-import VisitedStat from '../../components/visited-stat';
+import WorldMap from '../components/world-map';
+import USMap from '../components/us-map';
+import NYMap from '../components/ny-map';
+import VisitedStat from '../components/visited-stat';
 
 import { Tabs, Tag, Statistic, Row, Col } from 'antd';
 import { Typography, Divider } from 'antd';
 
-import visited from '../../config/map-metadata';
+import visited from '../config/map-metadata';
 import 'antd/dist/antd.css';
 const { Title, Paragraph, Text } = Typography;
 const { TabPane } = Tabs;
