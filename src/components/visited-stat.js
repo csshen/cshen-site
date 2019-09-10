@@ -13,7 +13,7 @@ class VisitedStat extends Component {
     ));
 
     return (
-      <Row gutter={16}>
+      <Row gutter={16} style={{marginBottom: '1em'}}>
         <Col span={6}>
           <Statistic title={stat} value={v.length} />
         </Col>
