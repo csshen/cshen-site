@@ -15,7 +15,7 @@ class About extends Component {
       <Layout location={location} title={siteTitle}>
         <SEO title='About' />
         <Title>About</Title>
-        <Link to={`${location.pathname}/maps`}>Maps</Link>
+        <Link to='/maps' className='links'>Maps</Link>
       </Layout>
     );
   }

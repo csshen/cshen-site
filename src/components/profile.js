@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
-import { Icon, Divider } from 'antd';
+import { Icon, Divider, Typography } from 'antd';
+
+const { Paragraph, Title } = Typography;
 
 class Profile extends Component {
   render() {
-    return (
-      <div style={{ textAlign: 'center', margin: '1em' }}>
-        <a href='https://github.com/csshen' className='icon-link'>
-          <Icon type='github' className='icon-up' />
-        </a>
+    const config = [
+      { icon: 'github', text: 'GitHub', url: 'https://github.com/csshen' },
+      { icon: 'instagram', text: 'Instagram', url: 'https://www.instagram.com/chrissshen/' },
+      { icon: 'youtube', text: 'YouTube', url: 'https://www.youtube.com/user/CrateNinja/videos' },
+      { icon: 'linkedin', text: 'LinkedIn', url: 'https://www.linkedin.com/in/christopher-shen-aa780912b/'}
+    ];
+
+    const items = config.map((media) =>
+      <div>
+        <Icon type={media.icon} />
         <Divider type='vertical' />
-        <a href='https://www.instagram.com/chrissshen/' className='icon-link'>
-          <Icon type='instagram' className='icon-up' />
-        </a>
-        <Divider type='vertical' />
-        <a href='https://www.youtube.com/user/CrateNinja/videos' className='icon-link'>
-          <Icon type='youtube' className='icon-up' />
-        </a>
-        <Divider type='vertical' />
-        <a href='https://www.linkedin.com/in/christopher-shen-aa780912b/' className='icon-link'>
-          <Icon type='linkedin' className='icon-up' />
-        </a>
-        <Divider type='vertical' />
-        <a href='mailto:chrisshen8@gmail.com' className='icon-link'>
-          <Icon type='mail' className='icon-up' />
-        </a>
+        <a href={media.url} className='links'>{ media.text }</a>
       </div>
+    );
+
+    return (
+      <>
+        <Divider orientation='left'>get in touch <Icon type="arrow-down" /></Divider>
+        { items }
+        <Paragraph copyable={{text: 'hello@chrisshen.co'}} style={{margin: 0}}>
+          <Icon type='mail'/>
+          <Divider type='vertical' />
+          hello@chrisshen.co
+        </Paragraph>
+      </>
     );
   }
 }

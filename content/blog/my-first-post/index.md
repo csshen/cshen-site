@@ -2,7 +2,7 @@
 title: Welcome!
 date: "2019-08-14T00:00:00.000"
 description: "Welcome to my new website! Click here to see my first post!"
-tags: ['tag1', 'tag2', 'tag3']
+tags: ['software', 'tag2']
 ---
 
 Hello and welcome to my new website! I've been meaning to refresh my site

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
+import { Tag } from 'antd';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -8,12 +9,10 @@ import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-
-    console.log(post.frontmatter.tags);
-    console.log('TEST');
+    const post = this.props.data.markdownRemark;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
+    const tags = post.frontmatter.tags;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -33,17 +32,17 @@ class BlogPostTemplate extends Component {
           style={{
             ...scale(-1 / 5),
             display: `block`,
-            marginBottom: rhythm(1),
+            marginBottom: 0 //rhythm(1),
           }}
         >
           {post.frontmatter.date}
         </p>
+
+        <div>Tags | { tags.map((item) => <Tag>{ item }</Tag>) }</div>
+
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr style={{ marginBottom: rhythm(1) }} />
         <Bio />
 
         <ul
@@ -57,14 +56,14 @@ class BlogPostTemplate extends Component {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={'/posts'+previous.fields.slug} rel='prev'>
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={'/posts'+next.fields.slug} rel='next'>
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -93,6 +92,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }
