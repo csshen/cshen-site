@@ -12,7 +12,7 @@ class BlogPostTemplate extends Component {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
-    const tags = post.frontmatter.tags;
+    const tags = post.frontmatter.tags || [];
 
     return (
       <Layout location={this.props.location} title={siteTitle}>

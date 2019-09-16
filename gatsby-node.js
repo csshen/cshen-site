@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   const galleryPost = path.resolve(`./src/templates/gallery-post.js`);
-  
+
   const result = await graphql(
     `
       {
@@ -21,7 +21,6 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 tags
-                post_type
               }
             }
           }
