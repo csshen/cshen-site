@@ -22,20 +22,16 @@ class BlogIndex extends Component {
         <SEO title='Home' />
         <Bio />
 
-        <Link to='/about' className='links'>about</Link>
-        <p>get to know me</p>
-        <Link to='/projects' className='links'>projects</Link>
-        <p>stuff i'm working on</p>
-        <Link to='/maps' className='links'>maps</Link>
-        <p>where i've been</p>
-        <Link to='/gallery' className='links'>gallery</Link><br/>
-        <p>some of my photos and videos</p>
-        <Link to='/posts' className='links'>posts</Link>
-        <p>Blog posts stuff im doing</p>
+        <Link to='/projects' className='link m'>projects</Link>
+        <p>what I'm working on</p>
+        <Link to='/gallery' className='link m'>gallery</Link><br/>
+        <p>photo and video</p>
+        <Link to='/maps' className='link m'>maps</Link>
+        <p>where I've been, where I am, and where I'm going</p>
+        <Link to='/posts' className='link m'>all posts</Link>
+        <p>everything</p>
 
         <Profile />
-
-
       </Layout>
     )
   }

@@ -12,21 +12,19 @@ class Profile extends Component {
       { icon: 'linkedin', text: 'LinkedIn', url: 'https://www.linkedin.com/in/christopher-shen-aa780912b/'}
     ];
 
-    const items = config.map((media) =>
-      <div>
-        <Icon type={media.icon} />
-        <Divider type='vertical' />
-        <a href={media.url} className='links'>{ media.text }</a>
-      </div>
-    );
-
     return (
       <>
         <Divider orientation='left'>get in touch <Icon type="arrow-down" /></Divider>
-        { items }
+        {config.map((media) =>
+          <div>
+            <Icon type={media.icon} style={{color: 'black'}}/>
+            <Divider type='vertical' />
+            <a href={media.url} className='black-link-r'>{ media.text }</a>
+          </div>
+        )}
         <Paragraph copyable={{text: 'hello@chrisshen.co'}} style={{margin: 0}}>
-          <Icon type='mail'/>
-          <Divider type='vertical' />
+          <Icon type='mail' style={{color: 'black'}}/>
+          <Divider type='vertical'/>
           hello@chrisshen.co
         </Paragraph>
       </>

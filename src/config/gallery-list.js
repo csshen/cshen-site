@@ -1,9 +1,17 @@
-const gallery_list = [
-  { name: 'Singapore', url: '/gallery/singapore' },
-  { name: 'Malaysia', url: '/gallery/malaysia' },
-  { name: 'Peru', url: '/gallery/peru' },
-  { name: 'Switzerland', url: '/gallery/switzerland' },
-  { name: 'Barcelona', url: '/gallery/barcelona' },
-];
+const gallery_list = {
+  united_states: [],
+  north_america: [],
+  south_america: ['Peru'],
+  europe: [
+    'Switzerland',
+    'Barcelona',
+    'Vatican City'
+  ],
+  asia: [
+    'Malaysia',
+    'Singapore',
+    'Hong Kong'
+  ]
+};
 
 export default gallery_list;

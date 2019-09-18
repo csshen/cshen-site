@@ -26,8 +26,8 @@ class Maps extends Component {
 
     return(
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Maps" />
-        <Title><Icon type='pushpin' /> Maps</Title>
+        <SEO title='Maps' />
+        <Title level={2}><Icon type='pushpin' /> Maps</Title>
 
         <Carousel autoplay style={{marginBottom: '1em' }}>
           <div>
@@ -59,7 +59,7 @@ class Maps extends Component {
         <Title level={3}>Where I'm From</Title>
 
         <Divider>
-          <Link className='plain-link'>
+          <Link className='grey-link'>
             <Icon type='pushpin' /> Long Island, New York
           </Link>
         </Divider>
@@ -67,45 +67,45 @@ class Maps extends Component {
 
         <Title level={3}>Where I've Lived</Title>
         <Divider>
-          <Link className='plain-link'><Icon type='pushpin' /> New York</Link>
+          <Link className='grey-link'><Icon type='pushpin' /> New York</Link>
           <Divider type='vertical' />
-          <Link className='plain-link'><Icon type='pushpin' /> Atlanta</Link>
+          <Link className='grey-link'><Icon type='pushpin' /> Atlanta</Link>
           <Divider type='vertical' />
-          <Link className='plain-link'><Icon type='pushpin' /> Los Angeles</Link>
+          <Link className='grey-link'><Icon type='pushpin' /> Los Angeles</Link>
         </Divider>
         <USMap showMarkers color={['#D7C0D0', '#C4AFBE']}/>
 
         <Title level={3}>Where I've Been</Title>
         <Divider>
-          <Link className='plain-link'>
+          <Link className='grey-link'>
             <Icon type='pushpin' /> United States
           </Link>
         </Divider>
         <USMap visited={visited.us_states} color={['#D7C0D0', '#C4AFBE']} />
         <VisitedStat visited={visited.us_states} stat='States'/>
         <Divider>
-          <Link className='plain-link'>
+          <Link className='grey-link'>
             <Icon type='pushpin' /> North America
           </Link>
         </Divider>
         <WorldMap continent='northAmerica' color={['#3DD6D0', '#38C3BE']} />
         <VisitedStat visited={visited.north_america} stat='Countries'/>
         <Divider>
-          <Link className='plain-link'>
+          <Link className='grey-link'>
             <Icon type='pushpin' /> South America
           </Link>
         </Divider>
         <WorldMap continent='southAmerica' color={['#EF476F', '#DA4165']} />
         <VisitedStat visited={visited.south_america} stat='Countries'/>
         <Divider>
-          <Link className='plain-link'>
+          <Link className='grey-link'>
             <Icon type='pushpin' /> Europe
           </Link>
         </Divider>
         <WorldMap continent='europe' color={['#FFD166', '#E8BE5D']} />
         <VisitedStat visited={visited.europe} stat='Countries'/>
         <Divider>
-          <Link className='plain-link'>
+          <Link className='grey-link'>
             <Icon type='pushpin' /> Asia
           </Link>
         </Divider>

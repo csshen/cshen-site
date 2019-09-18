@@ -13,9 +13,9 @@ const { Text } = Typography;
 
 class Posts extends Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -23,14 +23,21 @@ class Posts extends Component {
         <Text>All posts</Text>
 
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title || node.fields.slug;
+          let url;
+          console.log(node.frontmatter.post_type)
+          if (node.frontmatter.post_type === 'project') {
+            url = '/projects'+node.fields.slug;
+          } else {
+            url = '/posts'+node.fields.slug;
+          }
 
           return (
             <div key={node.fields.slug}>
-              <Link style={{ boxShadow: `none` }} to={'/posts'+node.fields.slug}>
+              <Link style={{ boxShadow: `none` }} to={url}>
                 <div className='snippet'>
                   <Divider orientation='left'>{title}</Divider>
-                  <small><Text type="secondary">{node.frontmatter.date}</Text></small>
+                  <small><Text type='secondary'>{node.frontmatter.date}</Text></small>
                   <br />
                   <Text>{ node.frontmatter.description || node.excerpt }</Text>
                   {/* display tags here eventually */}
@@ -64,6 +71,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            post_type
           }
         }
       }

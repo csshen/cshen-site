@@ -1,20 +1,4 @@
 /**/
-.links:hover {
-  text-decoration: underline;
-}
-
-.icon-link {
-  text-decoration: none;
-  color: inherit;
-  font-size: 24px;
-}
-
-.icon-up {
-    transition: transform .2s ease-out;
-}
-.icon-up:hover {
-  transform: translate(0, -0.15em);
-}
 
 
 .snippet:hover {
@@ -22,6 +6,53 @@
   border-radius: 7px;
 }
 
-.plain-link {
+/* generic bold */
+.b {
+  font-weight: bold;
+}
+
+/* small headers */
+.m {
+  font-size: 16px;
+}
+
+/* ALL LINK STYLINFG*/
+.link {
+  border-bottom: 1px solid transparent;
+  transition: 0.0s;
+}
+.link:hover {
+  border-color: inherit;
+}
+
+.black-link {
   color: inherit;
+  text-decoration: underline;
+}
+.black-link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.black-link-r {
+  color: inherit;
+
+}
+.black-link-r:hover {
+  color: black;
+  border-bottom: 1px solid black;
+}
+
+/* inherits color and transitions to grey on hover */
+.grey-link {
+  color: inherit;
+  transition: 0.25s;
+}
+.grey-link:hover {
+  color: #C6DDF0;
+}
+
+/* These classes are for icons in projects page */
+.proj-icon {
+  font-size: 16px;
 }
