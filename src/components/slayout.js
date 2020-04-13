@@ -1,5 +1,5 @@
 import React from 'react';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar';
 import style from './slayout.module.scss';
 
 const SLayout = ({ location, title, children }) => {

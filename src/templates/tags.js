@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SLayout from '../components/slayout';
-import PostCard from '../components/PostCard';
+import PostCard from '../components/postcard';
 
 const Tags = ({ data, pageContext, siteTitle, location }) => {
 

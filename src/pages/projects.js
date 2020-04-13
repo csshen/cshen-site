@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import { Divider } from 'antd';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
-import PostCard from '../components/PostCard';
+import PostCard from '../components/postcard';
 
 const Projects = ({ location, data }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -54,7 +54,6 @@ export const pageQuery = graphql`
             date(formatString: "MMM DD, YYYY")
             title
             description
-            post_type
             github
             demo
           }

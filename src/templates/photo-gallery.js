@@ -40,7 +40,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allFile(filter: {relativeDirectory: {eq: $title}}) {
+    allFile(filter: {relativeDirectory: {eq: $title}, extension: {regex: "/jpg|png/"}}) {
       edges {
         node {
           childImageSharp {
