@@ -1,38 +1,86 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
-import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Profile from '../components/profile';
-
-import { Divider, Typography, Icon, Row, Col } from 'antd';
+import PostCard from '../components/PostCard';
+import { Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
-import './style.css';
-
-const { Text, Paragraph } = Typography;
+import '../styles/style.css';
+import { rhythm, scale } from '../utils/typography';
+import style from './index.module.css';
 
 class BlogIndex extends Component {
-
   render() {
     const { data, location } = this.props;
     const siteTitle = data.site.siteMetadata.title;
-
+    const posts = data.allMdx.edges;
+    const recent = posts.slice(0, 3);
     return (
-      <Layout location={location} title={siteTitle} >
+      <div style={{
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        maxWidth: '1100px',
+        margin: 'auto'
+      }}>
+      <h1 style={{
+        fontFamily: 'Crimson Text',
+        fontSize: 28
+      }}>CHRIS SHEN</h1>
+      <Row gutter={24}>
         <SEO title='Home' />
-        <Bio />
+        <Col lg={6}>
+          <div className='top' >
+          Last Updated: Jan 23, 2020<br/>
+          </div>
 
-        <Link to='/projects' className='link m'>projects</Link>
-        <p>what I'm working on</p>
-        <Link to='/gallery' className='link m'>gallery</Link><br/>
-        <p>photo and video</p>
-        <Link to='/maps' className='link m'>maps</Link>
-        <p>where I've been, where I am, and where I'm going</p>
-        <Link to='/posts' className='link m'>all posts</Link>
-        <p>everything</p>
+          <Link to='/about'><h5>About</h5></Link>
+          <div id={style.summary}>
+            Hello! I'm Chris, a recent Georgia Tech graduate
+            and incoming Software Development Engineer at
+            Amazon.  Check out some of my{' '}
+            <Link to='/tags/data-visualization' className='link'>data visualization</Link>,{' '}
+            <Link to='/tags/machine-learning' className='link'>machine learning</Link>, and{' '}
+            <Link to='/tags/linguistics' className='link'>linguistics</Link> projects.
+          </div>
 
-        <Profile />
-      </Layout>
+
+
+          <Link to='/projects'><h5>Projects</h5></Link>
+          <Link to='/travelogue'><h5>Travelogue</h5></Link>
+          <ul style={{
+            fontFamily: 'Inconsolata',
+
+          }}>
+            <li><Link to='/travelogue/japan' className='lz'>Japan · 日本</Link></li>
+            <li><Link to='/travelogue/taiwan' className='lz'>Taiwan · 臺灣</Link></li>
+            <li><Link to='/travelogue/korea' className='lz'>Korea · 한국</Link></li>
+          </ul>
+          <Link to='/archive'><h5>Archive</h5></Link>
+
+
+
+        </Col>
+        <Col lg={18}>
+
+          <Link to='/recent'><h5>Recent</h5></Link>
+          {
+            recent.map(({node}) => {
+              const { title, date, description, github, demo } = node.frontmatter;
+              return (<>
+                <PostCard
+                  title={title}
+                  description={description}
+                  excerpt={node.excerpt}
+                  image={'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
+                  date={date}
+                  slug={'/posts/'+node.fields.slug}
+                /><br/>
+                </>);
+            })
+          }
+        </Col>
+
+      </Row>
+      </div>
     )
   }
 }
@@ -44,6 +92,26 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 425)
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMM DD, YYYY")
+            title
+            description
+            post_type
+            github
+            demo
+          }
+        }
       }
     }
   }

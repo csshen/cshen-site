@@ -1,0 +1,22 @@
+{
+  "japan": {
+    "lat": 38,
+    "long": 136,
+    "scale": 13
+  },
+  "taiwan": {
+    "lat": 24.5,
+    "long": 120,
+    "scale": 40
+  },
+  "korea": {
+    "lat": 36,
+    "long": 128,
+    "scale": 30
+  },
+  "switzerland": {
+    "lat": 47,
+    "long": 8.2,
+    "scale": 30
+  }
+}

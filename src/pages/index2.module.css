@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.box {
+  position: relative;
+  width: 20%;
+  /* desired width */
+  margin: 5px;
+}
+
+.box:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /* initial ratio of 1:1*/
+}
+
+#name {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: black;
+  margin-top: 1em;
+}
+
+.header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  display: none;
+}
+
+.content {
+  background-color: pink;
+  float: right;
+  width: calc(100vw - 250px);
+}
+
+.reveal {
+  display: block;
+  visibility: visible;
+  width: 250px;
+
+  position: fixed;
+top: 0;
+left:0;
+
+background-color: white;
+
+
+  font-family: "Inconsolata";
+  font-size: 14px;
+  color: #343A3F;
+  padding-left: 2em;
+  z-index: 2;
+  transition: visibility 2s;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+    visibility: hidden;
+  }
+  .content {
+    width: 100vw;
+  }
+  .header {
+    display: block;
+  }
+}

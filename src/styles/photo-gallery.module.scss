@@ -1,0 +1,28 @@
+$gutter: 2em;
+
+.thumbnail {
+  width: 100%;
+  opacity: 1;
+  transition: all .25s ease-in-out;
+  &:hover {
+    opacity: 70%;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $gutter;
+  div {
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

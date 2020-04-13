@@ -1,77 +1,63 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Tag } from 'antd';
-
-import Bio from '../components/bio';
-import Layout from '../components/layout';
+//import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { Row, Col, Tag } from 'antd';
+import SLayout from '../components/slayout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+import style from '../styles/blog-post.module.css';
 
-class BlogPostTemplate extends Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
-    const { previous, next } = this.props.pageContext;
-    const tags = post.frontmatter.tags || [];
+const BlogPostTemplate = ({ data, pageContext }) => {
+  const post = data.mdx;
+  const tags = post.frontmatter.tags || [];
+  const { title, description } = post.frontmatter;
+  let { slug, previous, next } = pageContext;
+  previous = previous && (
+    <Link to={'/posts'+previous.fields.slug}
+          rel='prev'
+          className={style.nav}
+    >
+      <span id={style.left}>←</span>
+      <span>{' '+previous.frontmatter.title}</span>
+    </Link>
+  );
+  next = next && (
+    <Link to={'/posts'+next.fields.slug}
+          rel='next'
+          className={style.nav}
+    >
+      <span>{next.frontmatter.title+' '}</span>
+      <span id={style.right}>→</span>
+    </Link>
+  );
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <h1
-          style={{
-            marginTop: rhythm(1),
-            marginBottom: 0,
-          }}
-        >
-          {post.frontmatter.title}
-        </h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: 0 //rhythm(1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-
-        <div>Tags | { tags.map((item) => <Tag>{ item }</Tag>) }</div>
-
-
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr style={{ marginBottom: rhythm(1) }} />
-        <Bio />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={'/posts'+previous.fields.slug} rel='prev'>
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={'/posts'+next.fields.slug} rel='next'>
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </Layout>
-    )
-  }
+  return (
+    <SLayout location={'/posts'+slug}>
+    <div id={style.wrapper}>
+      <SEO title={title} description={description || post.excerpt} />
+      <div className={style.float} style={{textAlign: 'right'}}>
+        <div id={style.title}>{post.frontmatter.title}</div>
+        <div id={style.subtitle}>{post.frontmatter.description}</div>
+        <div id={style.date}>{post.frontmatter.date}</div>
+      </div>
+      <div className={style.mdx}>
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </div>
+      <div className={style.float}>
+        {tags.map(item => (
+          <Tag color='#989EA3' style={{fontFamily: 'Inconsolata'}}>
+          <Link to={`/tags/${item}`}>{ item }</Link>
+          </Tag>)
+        )}
+        <br /><br />
+        <div>
+          <span style={{float: 'left'}}>{ previous }</span>
+          <span style={{float: 'right'}}>{ next }</span>
+        </div>
+      </div>
+    </div>
+    </SLayout >
+  );
 }
 
 export default BlogPostTemplate;
@@ -84,10 +70,10 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

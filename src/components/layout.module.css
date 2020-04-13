@@ -1,0 +1,18 @@
+.nav {
+  font-family: 'Inconsolata';
+  color: inherit !important;
+}
+
+.nav:hover .a {
+  text-decoration: underline;
+}
+
+.nav:hover .b {
+  transform: translateX(-.3em);
+}
+
+.b {
+  display: inline-block;
+  transition-timing-function: ease-in;
+  transition: 100ms;
+}

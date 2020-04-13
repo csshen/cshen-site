@@ -1,0 +1,48 @@
+.item {
+  font-family: "Inconsolata";
+  font-size: 14px;
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.country {
+  font-weight: 800;
+}
+
+.out {
+  position: relative;
+  background-color: #E5DADA;
+  padding: 0; margin: 0;
+}
+
+.out:hover {
+  overflow: hidden;
+}
+
+@keyframes blurin {
+  from { filter: blur(10px);}
+  to { filter: blur(0px);}
+}
+
+.in {
+  animation-name: blurin;
+  animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  animation-duration: 2s;
+  transition: transform .25s ease-in-out;
+}
+.in:hover, .overlay:hover + .in {
+  transform: scale(1.04);
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  left: 1em;
+  top: 1em;
+}
+
+svg {
+  pointer-events: none;
+}

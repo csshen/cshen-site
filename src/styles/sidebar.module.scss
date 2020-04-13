@@ -1,0 +1,37 @@
+.sidebar {
+  width: 250px;
+  font-family: "Inconsolata";
+  font-size: 14px;
+  color: #343A3F;
+  padding: 2em 0 0 2em;
+  #name {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    &:before { content: "\00a0"; font-size: 14px; }
+  }
+  a {
+    color: inherit;
+    &:before, &:after { content: "\00a0" }
+    &:hover {
+      color: inherit;
+      background-color: #FCE235;
+    }
+  }
+
+  .highlight {
+    background-color: #FCE235;
+    cursor: default;
+  }
+  .highlightA:hover { background-color: #94FBAB; }
+  .highlightB {
+    background-color: #94FBAB;
+    cursor: default;
+    &:hover { background-color: #94FBAB }
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+  li { margin-bottom: .1em }
+}

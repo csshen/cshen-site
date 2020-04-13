@@ -1,65 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
-
-import Layout from '../components/layout';
+import { Divider } from 'antd';
+import SLayout from '../components/slayout';
 import SEO from '../components/seo';
+import PostCard from '../components/PostCard';
 
-import { Typography, Divider, Icon, Avatar,
-         Tooltip} from 'antd';
+const Projects = ({ location, data }) => {
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMdx.edges;
+  return (
+    <SLayout location={location.pathname} title={siteTitle}>
+      <SEO title='Projects' />
+      {
+        posts.map(({node}) => {
+          const { title, date, description, github, demo } = node.frontmatter;
 
-const { Title, Paragraph, Text } = Typography;
+          return (<>
+            <PostCard
+              title={title}
+              description={description}
+              image={'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
+              date={date}
+              slug={'/posts/'+node.fields.slug}
+            /><br/>
 
-
-class Projects extends Component {
-  render() {
-    const { location, data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
-
-
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title='Projects' />
-        <Title level={2} ><Icon type='project'/> Projects</Title>
-        {
-          posts.map(({ node}) => {
-            const { title, date, description, github, demo } = node.frontmatter;
-
-            return (
-              <div>
-                <Link to={'/projects'+node.fields.slug}>
-                  <Title level={4} className='grey-link'>{title}</Title>
-                </Link>
-                <Paragraph>{description}</Paragraph>
-                <small><Text type='secondary'>{date}</Text></small>
-                <Divider orientation='right' style={{marginTop: 0}}>
-                  <Tooltip title='Demo'>
-                    <a href={demo} className='grey-link proj-icon'>
-                      <Icon type='control' />
-                    </a>
-                  </Tooltip>
-                  <Divider type='vertical' />
-                  <Tooltip title='GitHub'>
-                    <a href={github} className='grey-link proj-icon'>
-                      <Icon type='github' />
-                    </a>
-                  </Tooltip>
-                  <Divider type='vertical' />
-                  <Tooltip title='Read More'>
-                    <Link to={'/projects'+node.fields.slug} className='grey-link proj-icon'>
-                      <Icon type='read' />
-                    </Link>
-                  </Tooltip>
-                </Divider>
-              </div>
-            );
+            </>);
           })
         }
-
-
-      </Layout>
-    );
-  }
+    </SLayout>
+  );
 }
 
 export default Projects;
@@ -71,9 +40,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { post_type: { in: "project" } } }
+      filter: { frontmatter: { tags: { in: "project" } } }
     ) {
       edges {
         node {
