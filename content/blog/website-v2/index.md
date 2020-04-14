@@ -5,7 +5,7 @@ description: "Welcome!"
 tags: ['project']
 ---
 
-Hello and welcome to my new website! This website has regrettably been in an
+Hello and welcome to my new website! Regrettably, this website has been in an
 unfinished state for quite some time now, but thanks to social distancing
 measures I finally have the time and motivation to work on it and have
 made enough progress that I am happy with publishing the site. I’ve been
@@ -16,7 +16,7 @@ To get started, I want to highlight two recent projects I’ve been
 working on — [Linguistic Phylogenies](/posts/linguistic-phylogenies) and
 [Arcadia](/posts/arcadia). Also, I recently returned from trip that included
 Japan, Taiwan, and Korea and took a lot of pictures!  Head over to
-[Travelogue](/travelogue) for photos and cool maps.
+[Travelogue](/travelogue) to see photos and maps.
 
 I am hoping to add something new to the site every one to two weeks,
 so stay tuned!

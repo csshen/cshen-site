@@ -36,7 +36,7 @@ const MapChart = ({ country, markers }) => {
       </Geographies>
       {markers.map(({ city, lat, long, radius }) => (
         <Marker key={city} coordinates={[long, lat]}>
-          <circle r={4*radius} fill='#F00' fillOpacity='50%' />
+          <circle r={4*radius} fill='#F00' fillOpacity={0.6} />
         </Marker>
       ))}
     </ComposableMap>
