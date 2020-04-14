@@ -8,6 +8,7 @@
     font-size: 28px;
     font-weight: 800;
     font-family: 'Open Sans', sans-serif;
+    user-select: none;
     &:before { content: "\00a0"; font-size: 14px; }
   }
   a {

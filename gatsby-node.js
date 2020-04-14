@@ -10,10 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allMdx(sort: {fields: [frontmatter___date], order: DESC}, limit: 1000, filter: {fileAbsolutePath: {regex: "/blog(.*)/"}}) {
           edges {
             node {
               fields {

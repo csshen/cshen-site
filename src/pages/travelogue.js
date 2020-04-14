@@ -15,8 +15,7 @@ const Travelogue = ({ data, location }) => {
       {
         data.countries.edges.map(edge => {
           let fm = edge.node.childMdx.frontmatter;
-          let cid = fm.translations[0].toLowerCase() // country ID change this to
-          // add dashes in multi word country
+          let cid = fm.translations[0].toLowerCase().replace(/ /g, '-');
           return (
             <Link to={`/travelogue/${cid}`} className={style.item}>
               <div className={style.out}>

@@ -98,10 +98,9 @@ class Ling extends Component {
     return (<svg height={500}
       style={{
         width: '100%',
-        maxWidth: '900px',
+        maxWidth: '700px',
         margin: 'auto',
         display: 'block',
-        border: '1px solid black'
       }}></svg>);
   }
 }

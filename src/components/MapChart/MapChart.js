@@ -21,7 +21,7 @@ const MapChart = ({ country, markers }) => {
       height={400}
     >
       <Graticule stroke='#EAEAEC' />
-      <Geographies geography={geoURL} onGeographyPathsLoaded={() => console.log('LOAD')}>
+      <Geographies geography={atlas[country].geoURL || geoURL}>
         {({ geographies }) =>
           geographies
             .map(geo => (

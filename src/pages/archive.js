@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
 import { Divider } from 'antd';
-import style from '../styles/archive.module.css';
+import style from '../styles/archive.module.scss';
 
 const Archive = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -14,15 +14,16 @@ const Archive = ({ data, location }) => {
     <SLayout location={location.pathname} title={siteTitle}>
       <SEO title='Archive' />
       <div style={{paddingTop: '3em'}}>
+        <strong className={style.title}>All Posts</strong>
         {
           posts.map(({node}) => {
             const title = node.frontmatter.title || node.fields.slug;
             let url = '/posts'+node.fields.slug;
-            return (<>
-              <Link to={url} className={`${style.file} l2`}>
+            return (<div>
+              <Link to={url} className={style.file}>
                 {node.frontmatter.date} · {title}
               </Link>
-              <br /></>);
+              </div>);
           })
         }
       </div>

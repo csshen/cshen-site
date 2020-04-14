@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SLayout from '../components/slayout';
-import PostCard from '../components/postcard';
+import SEO from '../components/seo';
+import style from '../styles/archive.module.scss';
 
 const Tags = ({ data, pageContext, siteTitle, location }) => {
-
   const recent = data.allMdx.edges;
   const tag = pageContext.tag.toLowerCase()
     .split(' ')
@@ -13,33 +13,21 @@ const Tags = ({ data, pageContext, siteTitle, location }) => {
 
   return (
     <SLayout location={location.pathname} title={siteTitle}>
-      <h2>
-      <Link to='/archive'>
-      <span style={{ color: '#989EA3'}}>POSTS · </span>
-      </Link>
-      <span style={{ color: '#4C6085'}}>{tag}</span>
-      </h2>
-
-      {
-        recent.map(({node}) => {
-          const { title, date, description, github, demo } = node.frontmatter;
-
-          return (<>
-            <PostCard
-              title={title}
-              description={description}
-              image={'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'}
-              date={date}
-              slug={'/posts'+node.fields.slug}
-              github={github}
-              demo={demo}
-            /><br/>
-
-            </>);
-        })
-      }
-
-
+      <SEO title={tag} />
+      <div style={{paddingTop: '3em'}}>
+        <div className={style.title}>Posts / <strong>{tag}</strong></div>
+        {
+          recent.map(({node}) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            let url = '/posts'+node.fields.slug;
+            return (<div>
+              <Link to={url} className={style.file}>
+                { node.frontmatter.date } · { title }
+              </Link>
+              </div>);
+          })
+        }
+      </div>
     </SLayout>
   );
 }
@@ -58,6 +46,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             description
+            date(formatString: "MMM DD, YYYY")
           }
         }
       }

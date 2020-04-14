@@ -19,10 +19,13 @@ $gutter: 2em;
   div {
     overflow: hidden;
   }
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1120px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 880px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

@@ -45,7 +45,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { post_type: { in: "project" } } }
+      filter: { frontmatter: { tags: { in: "project" } } }
     ) {
       edges {
         node {
@@ -57,7 +57,6 @@ export const pageQuery = graphql`
             date(formatString: "MMM DD, YYYY")
             title
             description
-            post_type
             github
             demo
           }

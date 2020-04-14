@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Row, Col, Tag } from 'antd';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
-import style from '../styles/blog-post.module.css';
+import style from '../styles/blog-post.module.scss';
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.mdx;
@@ -13,29 +13,21 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const { title, description } = post.frontmatter;
   let { slug, previous, next } = pageContext;
   previous = previous && (
-    <Link to={'/posts'+previous.fields.slug}
-          rel='prev'
-          className={style.nav}
-    >
-      <span id={style.left}>←</span>
-      <span>{' '+previous.frontmatter.title}</span>
+    <Link to={'/posts'+previous.fields.slug} rel='prev'>
+      {'← '+previous.frontmatter.title}
     </Link>
   );
   next = next && (
-    <Link to={'/posts'+next.fields.slug}
-          rel='next'
-          className={style.nav}
-    >
-      <span>{next.frontmatter.title+' '}</span>
-      <span id={style.right}>→</span>
+    <Link to={'/posts'+next.fields.slug} rel='next'>
+      {next.frontmatter.title+' →'}
     </Link>
   );
 
   return (
-    <SLayout location={'/posts'+slug}>
+    <SLayout location={'/posts'+slug} padding='0em'>
     <div id={style.wrapper}>
       <SEO title={title} description={description || post.excerpt} />
-      <div className={style.float} style={{textAlign: 'right'}}>
+      <div className={style.float}>
         <div id={style.title}>{post.frontmatter.title}</div>
         <div id={style.subtitle}>{post.frontmatter.description}</div>
         <div id={style.date}>{post.frontmatter.date}</div>
@@ -50,7 +42,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           </Tag>)
         )}
         <br /><br />
-        <div>
+        <div id={style.nav}>
           <span style={{float: 'left'}}>{ previous }</span>
           <span style={{float: 'right'}}>{ next }</span>
         </div>

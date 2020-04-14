@@ -18,5 +18,11 @@
     "lat": 47,
     "long": 8.2,
     "scale": 30
+  },
+  "hong-kong": {
+    "lat": 22.3,
+    "long": 114.1,
+    "scale": 350,
+    "geoURL": "https://raw.githubusercontent.com/csshen/topojson/master/hong-kong.json"
   }
 }

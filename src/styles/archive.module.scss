@@ -1,0 +1,19 @@
+.title {
+  font-family: 'Inconsolata';
+  font-size: 14px;
+  pointer-events: none;
+  &:before {
+    content: "\00a0"
+  }
+}
+
+.file {
+  font-family: 'Inconsolata';
+  font-size: 14px;
+  color: inherit;
+  &:hover {
+    background-color: #98D2EB;
+    color: inherit;
+  }
+  &:before, &:after { content: "\00a0" }
+}

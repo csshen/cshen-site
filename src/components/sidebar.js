@@ -7,7 +7,7 @@ const NavLink = ({ children, to, location }) => {
   return <Link to={to} activeClassName={style.highlight}>{ children }</Link>;
 }
 // header link
-const HLink = ({ children, to, location }) => {
+const HLink = ({ children, to }) => {
   return <Link to={to} className={style.highlightA} activeClassName={style.highlightB}><strong>{ children }</strong></Link>;
 }
 
@@ -16,31 +16,26 @@ const Sidebar = ({ location }) => {
     <div className={style.sidebar}>
       <h3 id={style.name}>CHRIS SHEN</h3>
       <ul>
-        <li><NavLink to='/index2' location={location}>Recent</NavLink></li>
+        <li><Link to='/index2' activeClassName={style.highlight}>Recent</Link></li>
         <hr />
-        <li><HLink to='/projects' location={location}>Projects</HLink></li>
-        <li><NavLink to='/travelogue/japan' location={location}>Arcadia</NavLink></li>
-        <li><NavLink to='/travelogue/japan' location={location}>Deep Lofi</NavLink></li>
+        <li><HLink to='/projects'>Projects</HLink></li>
+        <li><Link to='/posts/website-v2' activeClassName={style.highlight}>Website 2.0</Link></li>
+        <li><Link to='/posts/arcadia' activeClassName={style.highlight}>Arcadia</Link></li>
         <hr />
-        <li><HLink to='/travelogue' location={location}>Travelogue</HLink></li>
-        <li><NavLink to='/travelogue/japan' location={location}>Japan</NavLink></li>
-        <li><NavLink to='/travelogue/taiwan' location={location}>Taiwan</NavLink></li>
-        <li><NavLink to='/travelogue/korea' location={location}>Korea</NavLink></li>
-        <li><NavLink to='/travelogue/switzerland' location={location}>Switzerland</NavLink></li>
-        <li><NavLink to='/travelogue/singapore' location={location}>Singapore</NavLink></li>
+        <li><HLink to='/travelogue'>Travelogue</HLink></li>
+        <li><Link to='/travelogue/japan' activeClassName={style.highlight}>Japan</Link></li>
+        <li><Link to='/travelogue/taiwan' activeClassName={style.highlight}>Taiwan</Link></li>
+        <li><Link to='/travelogue/korea' activeClassName={style.highlight}>Korea</Link></li>
+        <li><Link to='/travelogue/hong-kong' activeClassName={style.highlight}>Hong Kong</Link></li>
+        <li><Link to='/travelogue/singapore' activeClassName={style.highlight}>Singapore</Link></li>
         <hr />
-        <li><HLink to='/tags/linguistics' location={location}>Linguistics</HLink></li>
-        <li><NavLink to='/posts/linguistic-phylogenies/' location={location}>Linguistic Phylogenies</NavLink></li>
-        <li><Link>N Gram Classification</Link></li>
-        <li><Link>WSB Chatbot</Link></li>
-        <li><Link>Aizuchi</Link></li>
+        <li><HLink to='/tags/linguistics'>Linguistics</HLink></li>
+        <li><Link to='/posts/linguistic-phylogenies' activeClassName={style.highlight}>Linguistic Phylogenies</Link></li>
         <hr />
-        <li><b>&nbsp;Design</b></li>
-        <li><Link>Some design project</Link></li>
-        <li><Link>Typography</Link></li>
-        <li><Link>Vaporwave CSS</Link></li>
+        <li><HLink to='/tags/design'>Design</HLink></li>
+        <li><Link to='/posts/vaporwave' activeClassName={style.highlight}>Vaporwave</Link></li>
         <hr />
-        <li><HLink to='/archive' location={location}>Archive</HLink></li>
+        <li><HLink to='/archive'>Archive</HLink></li>
         <hr />
         <li><Link to='/about' activeClassName={style.highlight}>About</Link></li>
         <li><Link>Contact</Link></li>

@@ -107,7 +107,6 @@ export const pageQuery = graphql`
             date(formatString: "MMM DD, YYYY")
             title
             description
-            post_type
             github
             demo
           }
