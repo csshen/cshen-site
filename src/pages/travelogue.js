@@ -17,17 +17,13 @@ const Travelogue = ({ data, location }) => {
           let fm = edge.node.childMdx.frontmatter;
           let cid = fm.translations[0].toLowerCase().replace(/ /g, '-');
           return (
-            <Link to={`/travelogue/${cid}`} className={style.item}>
-              <div className={style.out}>
-                <div className={style.overlay}>
-                  <div className={style.country}>{ fm.translations.join(' · ') }</div>
-                  <div>{ fm.cities.map(city => city.city).join(' · ') }</div>
-                  <div>{ fm.timestamp }</div>
-                </div>
-                <div className={style.in}>
-                  <MapChart country={cid} markers={fm.cities}/>
-                </div>
+            <Link to={`/travelogue/${cid}`} className={style.tile}>
+              <div className={style.overlay}>
+                <strong>{ fm.translations.join(' · ') }</strong>
+                <div>{ fm.cities.map(city => city.city).join(' · ') }</div>
+                <div>{ fm.timestamp }</div>
               </div>
+              <MapChart country={cid} markers={fm.cities}/>
             </Link>
           );
         })

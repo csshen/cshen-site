@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 //import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Row, Col, Tag } from 'antd';
+import { Tag } from 'antd';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
 import style from '../styles/blog-post.module.scss';

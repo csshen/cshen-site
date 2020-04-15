@@ -1,4 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+$gutter: 2em;
+
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $gutter;
+  div {
+    overflow: hidden;
+  }
+  @media only screen and (max-width: 880px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.test {
+  height: 100px;
+  background-color: red;
+  width: 100%;
+  flex-basis: 2;
+}
 
 .box {
   position: relative;

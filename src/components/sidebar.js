@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import style from '../styles/sidebar.module.scss';
 
-// normal navigation link
-const NavLink = ({ children, to, location }) => {
-  return <Link to={to} activeClassName={style.highlight}>{ children }</Link>;
-}
 // header link
 const HLink = ({ children, to }) => {
   return <Link to={to} className={style.highlightA} activeClassName={style.highlightB}><strong>{ children }</strong></Link>;
@@ -16,7 +12,7 @@ const Sidebar = ({ location }) => {
     <div className={style.sidebar}>
       <h3 id={style.name}>CHRIS SHEN</h3>
       <ul>
-        <li><Link to='/index2' activeClassName={style.highlight}>Recent</Link></li>
+        <li><Link to='/' activeClassName={style.highlight}>Recent</Link></li>
         <hr />
         <li><HLink to='/projects'>Projects</HLink></li>
         <li><Link to='/posts/website-v2' activeClassName={style.highlight}>Website 2.0</Link></li>

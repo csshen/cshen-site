@@ -10,6 +10,9 @@ $max-content: 550px;
       color: inherit;
       background-color: #98D2EB;
     }
+    &:before, &:after {
+      content: "\00a0"
+    }
   }
 }
 
@@ -33,7 +36,7 @@ $max-content: 550px;
 
 #subtitle, #date {
   font-family: 'Work Sans', sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: #989EA3;
 }
 
@@ -45,6 +48,12 @@ $max-content: 550px;
   max-width: $max-image;
   margin: auto;
   font-size: 15px;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
   p, ul {
     max-width: $max-content;
     margin: 1em auto 1em auto;

@@ -1,0 +1,29 @@
+$anim-time: 0.3s;
+$scale: 1.03;
+
+.tile {
+  position: relative;
+  background-color: #EDF2F4;
+  line-height: 1.1;
+  transition: all $anim-time ease;
+  overflow: hidden;
+  .image {
+    transition: $anim-time ease;
+  }
+  &:hover {
+    opacity: .85;
+    .image { transform: scale($scale) }
+  }
+
+}
+
+
+.overlay {
+  font-family: 'Inconsolata';
+  text-align: right;
+  position: absolute;
+  z-index: 2;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+}
