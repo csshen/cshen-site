@@ -37,7 +37,7 @@ class Ling extends Component {
       .data(graph.nodes)
       .enter().append("g");
 
-    var circles = node.append("circle")
+    node.append("circle")
       .attr("r", 5)
       .attr("fill", node => color(node.group))
       .call(d3.drag()
@@ -45,7 +45,7 @@ class Ling extends Component {
       .on("drag", dragged)
       .on("end", dragended));
 
-    var labels = node.append("text")
+    node.append("text")
       .text(node => node.id.split('_')[0])
       .attr('x', 6)
       .attr('y', 3);

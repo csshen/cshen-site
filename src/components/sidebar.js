@@ -11,11 +11,11 @@ const Sidebar = ({ location }) => {
   return (
     <div className={style.sidebar}>
       <h3 id={style.name}>CHRIS SHEN</h3>
-      <ul style={{lineHeight: 1.25}}>
+      <ul style={{lineHeight: 1.4}}>
         <li><Link to='/' activeClassName={style.highlight}>Recent</Link></li>
         <hr />
         <li><strong style={{pointerEvents: 'none'}}>&nbsp;Pinned&nbsp;</strong></li>
-        <li><Link to='/posts/website-v2' activeClassName={style.highlight}>Website 2.0</Link></li>
+        <li><Link to='/posts/welcome' activeClassName={style.highlight}>Welcome</Link></li>
         <hr />
         <li><HLink to='/projects'>Projects</HLink></li>
         <li><Link to='/posts/arcadia' activeClassName={style.highlight}>Arcadia</Link></li>
@@ -34,8 +34,7 @@ const Sidebar = ({ location }) => {
         <hr />
         <li><HLink to='/archive'>Archive</HLink></li>
         <hr />
-        <li><Link to='/about' activeClassName={style.highlight}>About</Link></li>
-        <li><Link>Contact</Link></li>
+        <li><Link to='/contact' activeClassName={style.highlight}>Contact</Link></li>
       </ul>
     </div>
   );

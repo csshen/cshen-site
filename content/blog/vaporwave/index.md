@@ -10,8 +10,8 @@ textcolor: white
 I have been doing a lot of daydreaming lately. Moving to a new city and living
 alone at the height of a pandemic has given me a lot of free time, so I guess
 it can't be helped. One of the few things I can't get off mind lately is
-the *vaporwave* meme. I have been listening to vaporwave unironically nonstop
-and can't seem to stop.
+the *vaporwave* meme. I have been listening to vaporwave unironically and
+can't seem to stop.
 
 *"What is vaporwave?"* you might ask. From wikipedia [^1]
 
@@ -29,57 +29,46 @@ art, and cyberpunk tropes, as well as anime, Greco-Roman statues, and
 3D-rendered objects.
 
 Part of what drew me back to this meme was the heavy use of nostalgia...
+[^2] [^3]
 
 
-
-A curious trait of the aesthetic is its common use of stylized Japanese text.
-Why does vaporwave incorporate so much Japanese imagery? Memes? Maybe. However,
-there is a much better explanation, that has to do with the post WWII history
-of Japan.
+A curious trait of the aesthetic is its common use of stylized Japanese
+text [^2] [^3]. Why does vaporwave incorporate so much Japanese imagery? Memes?
+Maybe. Beyond memes, there is a much deeper explanation that has to do with
+the post WWII history of Japan.
 
 ![](./vwtokyo.gif)
 
 Japan was left devastated after WWII and its prospects were bleak to say the
-least.  Marshall Plan  
+least. The Marshall Plan, coupled with a strong U.S. presence, helped Japan
+get back on its feet economically and kickstarted an unrivaled period of
+economic growth.
 
-Japan in the 80s was the culmination
+Japan in the 80s was the culmination of this period of economic growth and
+saw the expansion of now familiar companies such as Sony, Panasonic, Nintendo,
+Casio, and Toyota. At the time, Japan's economy was second only to the United
+States by GDP [^4], and there were fears in the U.S. that Japan would surpass the
+U.S. to become the worlds dominant superpower [^5]. The following video explains
+1980s Japan as it appears as the setting of Netflix's *Earthquake Bird*.
 
-bubble came crashing down in the early 90s causing the lost decade
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/E3rtq7EdXwI"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+This era of history post war up until the early 1990s is now referred to as
+the Japanese economic miracle. It came to a sharp halt in 1991 when Japan's
+asset price bubble collapsed, and the period that followed became known
+as the lost decade [^6].
 
 ![](./economic-miracle.gif)
 
-cyberpunk
+Vaporwave is  a product of that time economic boom speding culture exploding
 
-to name a few
-
-Sony, Panasonic, Nintendo, Casio, Hitachi, Toyota, Mitsubishi
-
-post war eonomics miracle
-
-
-
-breathe the vapor.
-
-
-
-Why japanese imageary and text
-
-Vaporwave is catagorized
-
-
-
-rabbit hole
-
-cooped
-orrigins and history are
-
-quite interesting as a origins as a music  and later
-
-a e s t h e ti c stylized
-
-
-
-maybe i just want to go background [^4]
 
 nostalgic about it
 
@@ -90,28 +79,21 @@ looking for an esacpe
 
 You can see
 
-netlfic https://www.youtube.com/watch?v=E3rtq7EdXwI
 
+As a bonus, here is a vaporwave inspired 3D animation. This is my first
+project using [three.js](https://threejs.org/), JavaScript library that
+uses WebGL, a JavaScript API that leverages your computer's GPU to render
+graphics in the browser.
 
-vaporwave[^1]
+[render here]
 
+[Vaporwave: Genre Redefined](https://www.youtube.com/watch?v=xJwqp0IByto)
 
-
-Lorem[^2] ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Anyway, this is a project post so here's a project
-
- three.js, 3d framework taht usings WebGL, leverages yout gpu natuvely in the browser to rneder graphcis and wanted to try the framework youtube
-so here are some 3d renders [^5]
-
-what would this be without a project. vaporwave inspired
-
-https://www.youtube.com/watch?v=xJwqp0IByto
-https://www.youtube.com/watch?v=qGodWY9vZN8
-https://www.youtube.com/watch?v=9LQNeLwVaK8
+[How Vaporwave AESTHETICS took over the internet](https://www.youtube.com/watch?v=9LQNeLwVaK8)
 
 [^1]: [Vaporwave | Wikipedia](https://en.wikipedia.org/wiki/Vaporwave)
-[^2]: [Aesthetic | Know Your Meme](https://knowyourmeme.com/memes/aesthetic)
-[^3]: [Vaporwave | Know Your Meme](https://knowyourmeme.com/memes/cultures/vaporwave)
-[^4]: [TV Tropes | Japan Takes Over the World](https://tvtropes.org/pmwiki/pmwiki.php/Main/JapanTakesOverTheWorld)
-[^5]: [Vaporwave: Genre Redefined | YouTube](https://www.youtube.com/watch?v=xJwqp0IByto)
+[^2]: [Vaporwave | Know Your Meme](https://knowyourmeme.com/memes/cultures/vaporwave)
+[^3]: [Aesthetic | Know Your Meme](https://knowyourmeme.com/memes/aesthetic)
+[^4]: [Japanese Economic Miracle | Wikipedia](https://en.wikipedia.org/wiki/Japanese_economic_miracle)
+[^5]: [TV Tropes | Japan Takes Over the World](https://tvtropes.org/pmwiki/pmwiki.php/Main/JapanTakesOverTheWorld)
+[^6]: [Lost Decade (Japan)](https://en.wikipedia.org/wiki/Lost_Decade_(Japan))

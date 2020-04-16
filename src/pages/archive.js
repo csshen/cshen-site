@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
-import { Divider } from 'antd';
 import style from '../styles/archive.module.scss';
 
 const Archive = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.posts.edges;
-  const tags = data.tags.group;
+  // const tags = data.tags.group;
 
   return (
     <SLayout location={location.pathname} title={siteTitle}>
