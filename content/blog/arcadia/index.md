@@ -1,7 +1,7 @@
 ---
 title: 'Arcadia'
 date: '2020-04-15T00:00:00.000'
-description: 'Procedural Content Generation'
+description: 'Procedurally Generated Tilemaps'
 tags: ['project']
 
 ---

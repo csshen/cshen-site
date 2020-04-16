@@ -1,52 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Infant&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-.lz {
-  color: inherit;
-  border-bottom: 1px solid transparent;
-  transition: 0ms;
+.footnote-ref {
+  border-bottom: none !important;
+  &:before, &:after { content: "\00a0"}
+  background-color: #FFB98B;
 }
-.lz:hover {
-  color: black;
-  border-bottom: 1px solid black;
-}
-
-
-.l1 {
-  border-bottom: 1px solid transparent;
-  transition: 0ms;
-}
-.l1:hover {
-  color: black;
-  border-bottom: 1px solid black;
-}
-.l2 {
-  color: inherit;
-  border-bottom: 2px solid transparent;
-  transition: 0ms;
-}
-.l2:hover {
-  color: black;
-  border-bottom: 2px solid black;
-}
-
-
-
-
 
 /* Global Styles */
 html, body {
   background-color: #F8F7F5;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
 }
 
 h1 { font-size: 54px }
@@ -54,18 +21,7 @@ h2 { font-size: 42px }
 h3 { font-size: 36px }
 h4 { font-size: 24px }
 
-h5 {
-  font-size: 20px;
-  font-family: 'Crimson Text', serif;
-  margin-top: .3em;
-  margin-bottom: .3em;
-}
 
-h5:hover {
-  text-decoration: underline;
-  text-decoration-color: red;
-  text-decoration-thickness: 1px;
-}
 
 .top {
   font-family: 'Inconsolata';

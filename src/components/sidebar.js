@@ -11,11 +11,13 @@ const Sidebar = ({ location }) => {
   return (
     <div className={style.sidebar}>
       <h3 id={style.name}>CHRIS SHEN</h3>
-      <ul>
+      <ul style={{lineHeight: 1.25}}>
         <li><Link to='/' activeClassName={style.highlight}>Recent</Link></li>
         <hr />
-        <li><HLink to='/projects'>Projects</HLink></li>
+        <li><strong style={{pointerEvents: 'none'}}>&nbsp;Pinned&nbsp;</strong></li>
         <li><Link to='/posts/website-v2' activeClassName={style.highlight}>Website 2.0</Link></li>
+        <hr />
+        <li><HLink to='/projects'>Projects</HLink></li>
         <li><Link to='/posts/arcadia' activeClassName={style.highlight}>Arcadia</Link></li>
         <hr />
         <li><HLink to='/travelogue'>Travelogue</HLink></li>
@@ -23,7 +25,6 @@ const Sidebar = ({ location }) => {
         <li><Link to='/travelogue/taiwan' activeClassName={style.highlight}>Taiwan</Link></li>
         <li><Link to='/travelogue/korea' activeClassName={style.highlight}>Korea</Link></li>
         <li><Link to='/travelogue/hong-kong' activeClassName={style.highlight}>Hong Kong</Link></li>
-        <li><Link to='/travelogue/singapore' activeClassName={style.highlight}>Singapore</Link></li>
         <hr />
         <li><HLink to='/tags/linguistics'>Linguistics</HLink></li>
         <li><Link to='/posts/linguistic-phylogenies' activeClassName={style.highlight}>Linguistic Phylogenies</Link></li>

@@ -2,7 +2,7 @@
 title: Website 2.0
 date: "2020-04-13T00:00:00.000"
 description: "Welcome!"
-tags: ['project']
+tags: []
 ---
 
 Hello and welcome to my new website! Regrettably, this website has been in an

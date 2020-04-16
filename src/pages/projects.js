@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Divider } from 'antd';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
-import PostCard from '../components/postcard';
 import style from '../styles/photo-gallery.module.scss';
 import ps from '../styles/projects.module.scss';
-
-const ImgWrapper = () => {
-
-}
 
 const Projects = ({ location, data }) => {
   const siteTitle = data.site.siteMetadata.title;

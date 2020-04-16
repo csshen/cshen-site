@@ -52,9 +52,8 @@ $max-content: 550px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
   }
-  p, ul {
+  p, ul, blockquote {
     max-width: $max-content;
     margin: 1em auto 1em auto;
     padding: 0 1em 0 1em;
@@ -72,4 +71,23 @@ $max-content: 550px;
       border-color: transparent;
     }
   }
+  li[id^="fn-"] {
+    font-family: 'Inconsolata';
+    font-size: 14px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0;
+    a {
+      border-bottom: none;
+      margin-right: 1em;
+    }
+  }
+  blockquote {
+    background-color: lightgrey;
+    border-left: 4px solid grey;
+    font-style: italic;
+    font-size: 90%;
+
+  }
+
 }
