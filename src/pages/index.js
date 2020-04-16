@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import SLayout from '../components/slayout';
-import '../styles/style.scss';
+import '../styles/style.css';
 import style from '../styles/photo-gallery.module.scss';
 import ps from '../styles/projects.module.scss';
 
