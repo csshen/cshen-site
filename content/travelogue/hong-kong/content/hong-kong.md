@@ -1,6 +1,6 @@
 ---
 translations: ["Hong Kong", 香港]
-timestamp: "May 2019"
+date: "2019-05-02"
 cities:
   - city: Hong Kong
     lat: 22.3193

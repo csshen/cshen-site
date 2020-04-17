@@ -24,5 +24,30 @@
     "long": 114.1,
     "scale": 350,
     "geoURL": "https://raw.githubusercontent.com/csshen/topojson/master/hong-kong.json"
+  },
+  "france": {
+    "lat": 46.6,
+    "long": 2,
+    "scale": 20
+  },
+  "spain": {
+    "lat": 40.5,
+    "long": -2,
+    "scale": 18
+  },
+  "germany": {
+    "lat": 51,
+    "long": 10.5,
+    "scale": 20
+  },
+  "italy": {
+    "lat": 42,
+    "long": 12.5,
+    "scale": 20
+  },
+  "singapore": {
+    "lat": 1.3521,
+    "long": 103.8198,
+    "scale": 200
   }
 }

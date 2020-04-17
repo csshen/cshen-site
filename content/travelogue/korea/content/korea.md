@@ -1,6 +1,6 @@
 ---
 translations: [Korea, 한국]
-timestamp: "Feb 2020"
+date: "2020-02-24"
 cities:
   - city: Seoul
     lat: 37.5665

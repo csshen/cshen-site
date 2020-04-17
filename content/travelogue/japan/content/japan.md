@@ -1,6 +1,6 @@
 ---
 translations: [Japan, 日本]
-timestamp: "Feb 2020"
+date: '2020-02-04'
 cities:
   - city: Tokyo
     lat: 35.6762

@@ -58,6 +58,13 @@ $max-content: 550px;
     margin: 1em auto 1em auto;
     padding: 0 1em 0 1em;
   }
+  h2 {
+    max-width: $max-content;
+    margin: 0 auto 0 auto;
+    font-size: 28px;
+    font-family: 'Work Sans';
+    padding-left: 15px;
+  }
   span {
     pointer-events: none;
   }

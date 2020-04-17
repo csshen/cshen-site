@@ -22,5 +22,6 @@ so stay tuned!
 
 If you're still reading this, here's a little bit about this site — I built it
 using [Gatsby](https://www.gatsbyjs.org/). Gatsby is super cool static site
-generator built on top of [React](https://reactjs.org/) and GraphQL.
-It's been a pleasure to use so far, and I highly recommend checking it out.
+generator built on top of [React](https://reactjs.org/) and
+[GraphQL](https://graphql.org/). It's been a pleasure to use so far, and I
+highly recommend checking it out.

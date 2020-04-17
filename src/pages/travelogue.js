@@ -22,6 +22,7 @@ const Travelogue = ({ data, location }) => {
                 <strong>{ fm.translations.join(' · ') }</strong>
                 <div>{ fm.cities.map(city => city.city).join(' · ') }</div>
                 <div>{ fm.timestamp }</div>
+                <div>{ fm.date }</div>
               </div>
               <MapChart country={cid} markers={fm.cities}/>
             </Link>
@@ -42,13 +43,14 @@ export const pageQuery = graphql`
         title
       }
     }
-    countries: allFile(filter: {relativeDirectory: {regex: "/(.*)content/"}, sourceInstanceName: {eq: "travelogue"}, extension: {eq: "md"}}) {
+    countries: allFile(filter: {relativeDirectory: {regex: "/(.*)content/"}, sourceInstanceName: {eq: "travelogue"}, extension: {eq: "md"}},
+    sort: {fields: childMdx___frontmatter___date, order: DESC}) {
       edges {
         node {
           childMdx {
             frontmatter {
               translations
-              timestamp
+              date(formatString: "MMM YYYY")
               cities {
                 city
                 lat

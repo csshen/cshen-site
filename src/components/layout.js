@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Header from '../components/header';
 import { rhythm, scale } from '../utils/typography';
 import { Row, Col } from 'antd';
 import 'antd/dist/antd.css';
@@ -15,7 +14,6 @@ const Layout = ({ location, title, children }) => {
         width: '100%',
         margin: 'auto'
       }}>
-        <header><Header /></header>
         <main>{ children }</main>
         <footer style={{textAlign: 'center', marginTop: '1em'}} />
       </div>

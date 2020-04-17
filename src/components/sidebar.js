@@ -11,19 +11,17 @@ const Sidebar = ({ location }) => {
   return (
     <div className={style.sidebar}>
       <h3 id={style.name}>CHRIS SHEN</h3>
-      <ul style={{lineHeight: 1.4}}>
+      <ul style={{lineHeight: 1.4, color: 'inherit'}}>
         <li><Link to='/' activeClassName={style.highlight}>Recent</Link></li>
-        <hr />
-        <li><strong style={{pointerEvents: 'none'}}>&nbsp;Pinned&nbsp;</strong></li>
         <li><Link to='/posts/welcome' activeClassName={style.highlight}>Welcome</Link></li>
         <hr />
         <li><HLink to='/projects'>Projects</HLink></li>
         <li><Link to='/posts/arcadia' activeClassName={style.highlight}>Arcadia</Link></li>
         <hr />
         <li><HLink to='/travelogue'>Travelogue</HLink></li>
-        <li><Link to='/travelogue/japan' activeClassName={style.highlight}>Japan</Link></li>
-        <li><Link to='/travelogue/taiwan' activeClassName={style.highlight}>Taiwan</Link></li>
         <li><Link to='/travelogue/korea' activeClassName={style.highlight}>Korea</Link></li>
+        <li><Link to='/travelogue/taiwan' activeClassName={style.highlight}>Taiwan</Link></li>
+        <li><Link to='/travelogue/japan' activeClassName={style.highlight}>Japan</Link></li>
         <li><Link to='/travelogue/hong-kong' activeClassName={style.highlight}>Hong Kong</Link></li>
         <hr />
         <li><HLink to='/tags/linguistics'>Linguistics</HLink></li>

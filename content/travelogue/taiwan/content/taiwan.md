@@ -1,6 +1,6 @@
 ---
 translations: [Taiwan, 臺灣, 台湾]
-timestamp: "Feb 2020"
+date: "2020-02-14"
 cities:
   - city: Taipei
     lat: 25.0330

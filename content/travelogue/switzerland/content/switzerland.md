@@ -1,6 +1,6 @@
 ---
 translations: [Switzerland, Schweiz, Suisse, Svizzera]
-timestamp: "Sep 2018"
+date: "2018-09-14"
 cities:
   - city: Bern
     lat: 46.9480
