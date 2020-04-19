@@ -18,9 +18,7 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
    });
 
    const largesize = data.allFile.edges.map(elem => {
-     let srcSet = elem.node.childImageSharp.high.srcSet.split(',');
-     let quality = Math.min(4, srcSet.length - 1);
-     return { source: srcSet[quality].split(' ')[0] };
+     return { source: elem.node.childImageSharp.high.src };
    });
 
   return (
@@ -51,11 +49,11 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            low: fluid(quality: 70, maxWidth: 400) {
+            low: fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
             }
-            high: fluid(quality: 100) {
-              srcSet
+            high: fluid(quality: 100, maxWidth: 1600) {
+              src
             }
           }
         }

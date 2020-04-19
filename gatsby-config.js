@@ -2,13 +2,14 @@ module.exports = {
   siteMetadata: {
     title: `Chris Shen`,
     author: `Chris Shen`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://www.chrisshen.xyz`,
+    description: `Christopher Shen's personal website and blog.`,
+    siteUrl: `https://www.chrisshen.co`,
     social: {
       twitter: `chrisshen8`,
     },
   },
   plugins: [
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
