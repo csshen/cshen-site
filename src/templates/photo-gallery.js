@@ -17,8 +17,10 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
       </div>);
    });
 
-  const fullsize = data.allFile.edges.map(elem => {
-    return { source: elem.node.childImageSharp.original.src }
+  const largesize = data.allFile.edges.map(elem => {
+    let srcSet = elem.node.childImageSharp.fluid.srcSet.split(',');
+    let quality = Math.min(4, srcSet.length - 1);
+    return { source: srcSet[quality].split(' ')[0] };
   });
 
   return (
@@ -27,7 +29,7 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
       <ModalGateway>
         {modalVisibility ? (
           <Modal onClose={() => setModalVisibility(!modalVisibility)}>
-            <Carousel views={fullsize} currentIndex={index}/>
+            <Carousel views={largesize} currentIndex={index}/>
           </Modal>
         ) : null}
       </ModalGateway>
@@ -39,21 +41,19 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
 export default PhotoGalleryTemplate;
 
 export const pageQuery = graphql`
-  query GalleryPost($title: String) {
+  query GalleryPost($seo: String) {
     site {
       siteMetadata {
         title
       }
     }
-    allFile(filter: {relativeDirectory: {eq: $title}, extension: {regex: "/jpg|png/"}}) {
+    allFile(filter: {relativeDirectory: {eq: $seo}, extension: {regex: "/jpg|png/"}}) {
       edges {
         node {
           childImageSharp {
-            fluid(quality: 85) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid
-            }
-            original {
-              src
+              srcSet
             }
           }
         }

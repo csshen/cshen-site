@@ -46,31 +46,31 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const galleryQuery = await graphql(
     `
-      {
-        allDirectory(filter: {sourceInstanceName: {eq: "travelogue"}}) {
-          edges {
-            node {
-              relativePath
-            }
+    {
+    allMdx(filter: {fileAbsolutePath: {regex: "/travelogue(.*)/"}}) {
+      edges {
+        node {
+          frontmatter {
+            translations
           }
         }
       }
+    }
+  }
     `
   );
 
-  // To do: use lodash, flat, or some other library to flatten graphql queries
+  let gallery = galleryQuery.data.allMdx.edges;
 
-  let gallery = galleryQuery.data.allDirectory.edges;
-  gallery = gallery.map(e => e.node.relativePath);
-  gallery = gallery.filter(w => w);
-
-  gallery.forEach(elem => {
+  gallery.forEach(edge => {
+    let title = edge.node.frontmatter.translations[0];
+    let path = title.toLowerCase().replace(/ /g, '-');
     createPage({
-      path: `/travelogue/${elem}`,
+      path: `/travelogue/${path}`,
       component: photoGallery,
       context: {
-        //slug: post.node.fields.slug,
-        title: elem
+        seo: path,
+        title: title
       }
     });
   });

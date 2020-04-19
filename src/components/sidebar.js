@@ -16,19 +16,15 @@ const Sidebar = ({ location }) => {
         <li><Link to='/posts/welcome' activeClassName={style.highlight}>Welcome</Link></li>
         <hr />
         <li><HLink to='/projects'>Projects</HLink></li>
+        <li><Link to='/posts/linguistic-phylogenies' activeClassName={style.highlight}>Linguistic Phylogenies</Link></li>
         <li><Link to='/posts/arcadia' activeClassName={style.highlight}>Arcadia</Link></li>
+        <li><Link to='/posts/vaporwave' activeClassName={style.highlight}>Vaporwave</Link></li>
         <hr />
         <li><HLink to='/travelogue'>Travelogue</HLink></li>
         <li><Link to='/travelogue/korea' activeClassName={style.highlight}>Korea</Link></li>
         <li><Link to='/travelogue/taiwan' activeClassName={style.highlight}>Taiwan</Link></li>
         <li><Link to='/travelogue/japan' activeClassName={style.highlight}>Japan</Link></li>
         <li><Link to='/travelogue/hong-kong' activeClassName={style.highlight}>Hong Kong</Link></li>
-        <hr />
-        <li><HLink to='/tags/linguistics'>Linguistics</HLink></li>
-        <li><Link to='/posts/linguistic-phylogenies' activeClassName={style.highlight}>Linguistic Phylogenies</Link></li>
-        <hr />
-        <li><HLink to='/tags/design'>Design</HLink></li>
-        <li><Link to='/posts/vaporwave' activeClassName={style.highlight}>Vaporwave</Link></li>
         <hr />
         <li><HLink to='/archive'>Archive</HLink></li>
         <hr />

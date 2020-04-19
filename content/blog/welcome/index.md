@@ -1,7 +1,7 @@
 ---
 title: Welcome
 date: "2020-04-15T00:00:00.000"
-description: "Website 2.0"
+description: "Getting Started"
 tags: []
 ---
 

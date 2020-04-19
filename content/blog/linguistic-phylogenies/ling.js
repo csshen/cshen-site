@@ -8,18 +8,21 @@ class Ling extends Component {
     var svg = d3.select("svg");
     var width = svg.node().getBoundingClientRect().width;
     var height = svg.attr("height");
+    var radius = width > 400 ? 6 : 4;
 
-    var color = d3.scaleOrdinal(['#011638', '#aafcb8', '#8cd790','#77af9c','#285943']);
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
     var simulation = d3.forceSimulation()
       .force("link", d3.forceLink()
         .id(link => link.id)
-        // 300 * (1 - link.similarity)
-        // -90 * Math.log(link.similarity)
-        // 100 * Math.sqrt(1 - link.similarity)
-        // 8 * ((1/link.similarity) - 1)
-        // Math.acos(link.similarity) / Math.PI
-        .distance(link => 50 * Math.sqrt(((1/link.similarity) - 1)))
+        .distance(link => svg.node().getBoundingClientRect().width / 10 * -Math.log(link.similarity))
       )
       .force("charge", d3.forceManyBody())
       .force("center", d3.forceCenter(width / 2, height / 2));
@@ -38,8 +41,8 @@ class Ling extends Component {
       .enter().append("g");
 
     node.append("circle")
-      .attr("r", 5)
-      .attr("fill", node => color(node.group))
+      .attr("r", radius)
+      .attr("fill", node => getRandomColor())
       .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
@@ -60,8 +63,6 @@ class Ling extends Component {
     simulation.force("link")
       .links(graph.links);
 
-
-
     function ticked() {
       link
       .attr("x1", d => d.source.x)
@@ -73,7 +74,7 @@ class Ling extends Component {
 
     function dragstarted(d) {
       if (!d3.event.active) {
-          simulation.alphaTarget(0.3).restart();
+        simulation.alphaTarget(0.3).restart();
       }
       d.fx = d.x;
       d.fy = d.y;
@@ -86,12 +87,11 @@ class Ling extends Component {
 
     function dragended(d) {
       if (!d3.event.active) {
-          simulation.alphaTarget(0);
+        simulation.alphaTarget(0);
       }
       d.fx = null;
       d.fy = null;
     }
-
   }
 
   render() {
@@ -101,7 +101,8 @@ class Ling extends Component {
         maxWidth: '700px',
         margin: 'auto',
         display: 'block',
-      }}></svg>);
+      }}></svg>
+    );
   }
 }
 

@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import SEO from '../components/seo';
 import SLayout from '../components/slayout';
 import '../styles/style.css';
 import style from '../styles/photo-gallery.module.scss';
 import ps from '../styles/projects.module.scss';
+
 
 const BlogIndex = ({ location, data }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.mdx.edges;
   return (
     <SLayout location={location.pathname} title={siteTitle}>
+      <SEO title={'Home'} />
       <div className={style.grid}>
         {
           posts.map(({node}) => {

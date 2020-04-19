@@ -7,7 +7,8 @@
   "taiwan": {
     "lat": 24.5,
     "long": 120,
-    "scale": 40
+    "scale": 40,
+    "geoURL": "https://raw.githubusercontent.com/csshen/topojson/master/asia_10m.json"
   },
   "korea": {
     "lat": 36,
@@ -23,7 +24,7 @@
     "lat": 22.3,
     "long": 114.1,
     "scale": 350,
-    "geoURL": "https://raw.githubusercontent.com/csshen/topojson/master/hong-kong.json"
+    "geoURL": "https://raw.githubusercontent.com/csshen/topojson/master/asia_10m.json"
   },
   "france": {
     "lat": 46.6,
@@ -48,6 +49,7 @@
   "singapore": {
     "lat": 1.3521,
     "long": 103.8198,
-    "scale": 200
+    "scale": 200,
+    "geoURL": "https://raw.githubusercontent.com/csshen/topojson/master/asia_10m.json"
   }
 }

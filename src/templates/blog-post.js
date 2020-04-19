@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 //import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Tag } from 'antd';
 import SLayout from '../components/slayout';
 import SEO from '../components/seo';
 import style from '../styles/blog-post.module.scss';
@@ -36,11 +35,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         <MDXRenderer>{post.body}</MDXRenderer>
       </div>
       <div className={style.float}>
-        {tags.map(item => (
-          <Tag color='#989EA3' style={{fontFamily: 'Inconsolata'}}>
-          <Link to={`/tags/${item}`}>{ item }</Link>
-          </Tag>)
-        )}
+        { tags.map(item =><Link to={`/tags/${item}`} className={style.tag}>{ item }</Link>) }
         <br /><br />
         <div id={style.nav}>
           <span style={{float: 'left'}}>{ previous }</span>

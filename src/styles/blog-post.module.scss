@@ -1,8 +1,22 @@
 $max-image: 700px;
 $max-content: 550px;
 
+.tag {
+  padding: 2px;
+  background-color: #989EA3;
+  font-family: 'Inconsolata';
+  font-size: 12px;
+  color: white;
+  margin: 0.25em;
+  border-radius: 2px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
 #nav {
   font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
   a {
     color: inherit;
     transition: 0s;
