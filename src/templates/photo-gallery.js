@@ -13,15 +13,15 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
   const siteTitle = data.site.siteMetadata.title;
   const imgs = data.allFile.edges.map((elem, i) => {
     return (<div onClick={() => {setIndex(i); setModalVisibility(true);}}>
-        <Img fluid={{ ...elem.node.childImageSharp.fluid, aspectRatio: 1}} className={style.thumbnail}/>
+        <Img fluid={{ ...elem.node.childImageSharp.low, aspectRatio: 1}} className={style.thumbnail}/>
       </div>);
    });
 
-  const largesize = data.allFile.edges.map(elem => {
-    let srcSet = elem.node.childImageSharp.fluid.srcSet.split(',');
-    let quality = Math.min(4, srcSet.length - 1);
-    return { source: srcSet[quality].split(' ')[0] };
-  });
+   const largesize = data.allFile.edges.map(elem => {
+     let srcSet = elem.node.childImageSharp.high.srcSet.split(',');
+     let quality = Math.min(4, srcSet.length - 1);
+     return { source: srcSet[quality].split(' ')[0] };
+   });
 
   return (
     <SLayout location={location.pathname} title={siteTitle}>
@@ -51,8 +51,10 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fluid {
+            low: fluid(quality: 50) {
               ...GatsbyImageSharpFluid
+            }
+            high: fluid(quality: 100) {
               srcSet
             }
           }
