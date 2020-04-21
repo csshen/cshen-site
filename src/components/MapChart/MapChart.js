@@ -1,6 +1,8 @@
 import React from 'react';
 import atlas from './atlas';
-import geoURL from './world-50m.json';
+import geoURL from './world-50m-simplified.json';
+import europe from './europe-50m-simplified.json';
+import asia from './asia-50m-simplified.json';
 import {
   ComposableMap,
   Geographies,
@@ -10,6 +12,14 @@ import {
 } from 'react-simple-maps';
 
 const MapChart = ({ country, markers }) => {
+  let t;
+  if (atlas[country].continent === 'europe') {
+    t = europe;
+  } else if (atlas[country].continent === 'asia') {
+    t = asia;
+  } else {
+    t = atlas[country].geoURL || geoURL;
+  }
   return (
     <ComposableMap
       projection='geoAzimuthalEqualArea'
@@ -21,7 +31,7 @@ const MapChart = ({ country, markers }) => {
       height={400}
     >
       <Graticule stroke='#EAEAEC' />
-      <Geographies geography={atlas[country].geoURL || geoURL}>
+      <Geographies geography={t}>
         {({ geographies }) =>
           geographies
             .map(geo => (

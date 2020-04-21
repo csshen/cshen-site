@@ -2,7 +2,8 @@
   "japan": {
     "lat": 38,
     "long": 136,
-    "scale": 13
+    "scale": 13,
+    "continent": "asia"
   },
   "taiwan": {
     "lat": 24.5,
@@ -13,12 +14,14 @@
   "korea": {
     "lat": 36,
     "long": 128,
-    "scale": 30
+    "scale": 30,
+    "continent": "asia"
   },
   "switzerland": {
     "lat": 47,
     "long": 8.2,
-    "scale": 30
+    "scale": 30,
+    "continent": "europe"
   },
   "hong-kong": {
     "lat": 22.3,
@@ -29,22 +32,26 @@
   "france": {
     "lat": 46.6,
     "long": 2,
-    "scale": 20
+    "scale": 20,
+    "continent": "europe"
   },
   "spain": {
     "lat": 40.5,
     "long": -2,
-    "scale": 18
+    "scale": 18,
+    "continent": "europe"
   },
   "germany": {
     "lat": 51,
     "long": 10.5,
-    "scale": 20
+    "scale": 20,
+    "continent": "europe"
   },
   "italy": {
     "lat": 42,
     "long": 12.5,
-    "scale": 20
+    "scale": 20,
+    "continent": "europe"
   },
   "singapore": {
     "lat": 1.3521,
