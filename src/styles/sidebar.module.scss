@@ -1,35 +1,52 @@
+@import 'variables';
+
+#name {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: 'Open Sans', sans-serif;
+  user-select: none;
+}
+
+// normal link
+.nlink {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    background-color: $normal;
+  }
+}
+.nlink_active {
+  background-color: $normal;
+  cursor: default;
+}
+// heading link
+.hlink {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    background-color: $heading;
+  }
+}
+.hlink_active {
+  background-color: $heading;
+  cursor: default;
+}
+// external
+.elink {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    background-color: $external;
+  }
+}
+
 .sidebar {
+  a { &:before, &:after { content: "\00a0"; font-size: 14px; } }
   width: 250px;
   font-family: "Inconsolata";
   font-size: 14px;
   color: rgba(0, 0, 0, 0.75);
   padding: 2em 0 0 2em;
-  #name {
-    font-size: 28px;
-    font-weight: 800;
-    font-family: 'Open Sans', sans-serif;
-    user-select: none;
-    &:before { content: "\00a0"; font-size: 14px; }
-  }
-  a {
-    color: inherit;
-    &:before, &:after { content: "\00a0" }
-    &:hover {
-      color: inherit;
-      background-color: #FCE235;
-    }
-  }
-
-  .highlight {
-    background-color: #FCE235;
-    cursor: default;
-  }
-  .highlightA:hover { background-color: #94FBAB; }
-  .highlightB {
-    background-color: #94FBAB;
-    cursor: default;
-    &:hover { background-color: #94FBAB }
-  }
   ul {
     list-style-type: none;
     margin-left: 0;

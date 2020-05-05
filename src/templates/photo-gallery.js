@@ -13,7 +13,9 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
   const siteTitle = data.site.siteMetadata.title;
   const imgs = data.allFile.edges.map((elem, i) => {
     return (<div onClick={() => {setIndex(i); setModalVisibility(true);}}>
-        <Img fluid={{ ...elem.node.childImageSharp.low, aspectRatio: 1}} className={style.thumbnail}/>
+        <Img fluid={{ ...elem.node.childImageSharp.low, aspectRatio: 1}}
+             className={style.thumbnail}
+             placeholderStyle={{filter: 'blur(8px)'}}/>
       </div>);
    });
 

@@ -11,38 +11,35 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const tags = post.frontmatter.tags || [];
   const { title, description } = post.frontmatter;
   let { slug, previous, next } = pageContext;
-  previous = previous && (
-    <Link to={'/posts'+previous.fields.slug} rel='prev'>
-      {'← '+previous.frontmatter.title}
-    </Link>
-  );
+  previous= previous && (
+    <Link to={'/posts'+previous.fields.slug} rel='prev'
+          className={style.navlink}>
+          ← {previous.frontmatter.title}</Link>);
   next = next && (
-    <Link to={'/posts'+next.fields.slug} rel='next'>
-      {next.frontmatter.title+' →'}
-    </Link>
-  );
+    <Link to={'/posts'+next.fields.slug} rel='next'
+          className={style.navlink}>
+          {next.frontmatter.title} →</Link>);
 
   return (
     <SLayout location={'/posts'+slug} padding='0em'>
-    <div id={style.wrapper}>
       <SEO title={title} description={description || post.excerpt} />
-      <div className={style.float}>
-        <div id={style.title}>{post.frontmatter.title}</div>
-        <div id={style.subtitle}>{post.frontmatter.description}</div>
-        <div id={style.date}>{post.frontmatter.date}</div>
-      </div>
       <div className={style.mdx}>
+        <div className={style.heading}>
+          <div id={style.title}>{post.frontmatter.title}</div>
+          <div id={style.subtitle}>{post.frontmatter.description}</div>
+          <div id={style.date}>{post.frontmatter.date}</div>
+        </div>
+        <hr />
         <MDXRenderer>{post.body}</MDXRenderer>
-      </div>
-      <div className={style.float}>
-        { tags.map(item =><Link to={`/tags/${item}`} className={style.tag}>{ item }</Link>) }
-        <br /><br />
-        <div id={style.nav}>
+        <div style={{textAlign: 'right'}}>
+          { tags.map(item =><Link to={`/tags/${item}`} className={style.tag}>{ item }</Link>) }
+        </div>
+        <hr />
+        <div>
           <span style={{float: 'left'}}>{ previous }</span>
           <span style={{float: 'right'}}>{ next }</span>
         </div>
       </div>
-    </div>
     </SLayout >
   );
 }

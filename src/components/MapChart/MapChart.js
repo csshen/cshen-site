@@ -20,6 +20,8 @@ const MapChart = ({ country, markers }) => {
   } else {
     t = atlas[country].geoURL || geoURL;
   }
+
+
   return (
     <ComposableMap
       projection='geoAzimuthalEqualArea'
@@ -32,7 +34,7 @@ const MapChart = ({ country, markers }) => {
     >
       <Graticule stroke='#EAEAEC' />
       <Geographies geography={t}>
-        {({ geographies }) =>
+        {({ geographies, proj }) =>
           geographies
             .map(geo => (
               <Geography

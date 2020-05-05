@@ -64,7 +64,7 @@ export const pageQuery = graphql`
             textcolor
             featured {
               childImageSharp {
-                fluid {
+                fluid(maxWidth: 400) {
                   ...GatsbyImageSharpFluid
                 }
               }

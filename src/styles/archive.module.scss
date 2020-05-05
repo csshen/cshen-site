@@ -1,10 +1,10 @@
+@import 'variables';
+
 .title {
   font-family: 'Inconsolata';
   font-size: 14px;
   pointer-events: none;
-  &:before {
-    content: "\00a0"
-  }
+  &:before { content: "\00a0" }
 }
 
 .file {
@@ -12,7 +12,7 @@
   font-size: 14px;
   color: inherit;
   &:hover {
-    background-color: #98D2EB;
+    background-color: $normal;
     color: inherit;
   }
   &:before, &:after { content: "\00a0" }

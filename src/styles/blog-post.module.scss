@@ -1,115 +1,83 @@
-$max-image: 700px;
+@import 'variables';
 $max-content: 550px;
 
+/* blog post tags */
 .tag {
-  padding: 2px;
-  background-color: #989EA3;
+  padding: 2px 5px;
+  background-color: #94FBAB;
   font-family: 'Inconsolata';
-  font-size: 12px;
-  color: white;
+  color: inherit;
   margin: 0.25em;
   border-radius: 2px;
+}
+
+/* previous and next navigation links */
+.navlink {
+  color: inherit;
+  transition: 0s;
   &:hover {
-    opacity: 0.9;
-  }
-}
-
-#nav {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 14px;
-  a {
     color: inherit;
-    transition: 0s;
-    &:hover {
-      color: inherit;
-      background-color: #98D2EB;
-    }
-    &:before, &:after {
-      content: "\00a0"
-    }
+    background-color: $normal;
   }
+  &:before, &:after { content: "\00a0" }
 }
 
-#wrapper {
-  margin-top: 3em;
-  margin-bottom: 5em;
-}
-
-.float {
-  max-width: $max-image;
-  margin: auto;
-  padding: 0 15px 0 15px;
-  text-align: right;
-}
-
-#title {
-  font-family: 'Inconsolata';
-  font-weight: bold;
-  font-size: 28px;
-}
-
-#subtitle, #date {
+/* Blog post info - title, subtitle, description, etc. */
+.heading {
   font-family: 'Work Sans', sans-serif;
-  font-size: 15px;
-  color: #989EA3;
+  padding: 0 20px;
+}
+#title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.5;
+}
+#subtitle, #date {
+  font-size: 14px;
+  font-family: "Inconsolata";
+  line-height: 1.4;
+  color: #696969;
 }
 
 .mdx {
+  margin: 5em auto;
   font-family: 'Work Sans', sans-serif;
   color: #3F3F3F;
   line-height: 1.65;
-  color: #696969;
-  max-width: $max-image;
-  margin: auto;
-  font-size: 15px;
+  max-width: $max-content;
+  font-size: 14px;
   img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
   }
-  p, ul, blockquote {
-    max-width: $max-content;
-    margin: 1em auto 1em auto;
-    padding: 0 1em 0 1em;
-  }
-  h2 {
-    max-width: $max-content;
-    margin: 0 auto 0 auto;
-    font-size: 28px;
-    font-family: 'Work Sans';
-    padding-left: 15px;
-  }
-  span {
-    pointer-events: none;
-  }
-  a {
-    color: inherit;
-    transition: 0s;
-    border-bottom: 1.5px solid;
-    &:hover {
-      color: inherit;
+  p {
+    margin: 20px;
+    a {
       background-color: #FFB98B;
-      border-color: transparent;
+      &:before, &:after { content: "\00a0" }
     }
+  }
+  h3 { margin: 20px; font-family: 'Work Sans', sans-serif;}
+  blockquote {
+    border-left: 5px solid lightgrey;
+    font-style: italic;
+    font-size: 80%;
+    color: grey;
+    margin: 1em;
+  }
+  figcaption {
+    font-family: 'Inconsolata';
+    text-align: center;
   }
   li[id^="fn-"] {
     font-family: 'Inconsolata';
-    font-size: 14px;
     margin-left: 1em;
     margin-right: 1em;
     margin-bottom: 0;
     a {
       border-bottom: none;
-      margin-right: 1em;
+      &:before, &:after { content: "\00a0" }
+      &:hover { background: $external }
     }
   }
-  blockquote {
-    background-color: lightgrey;
-    border-left: 5px solid grey;
-    font-style: italic;
-    font-size: 90%;
-    padding-top: 1px;
-    padding-bottom: 1px;
-  }
-
 }

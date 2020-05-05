@@ -36,28 +36,29 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
-          { resolve: 'gatsby-remark-unwrap-images' },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 700,
-              quality: 80
-            },
-          },
+          'gatsby-remark-unwrap-images',
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 700,
+              quality: 80,
+              linkImagesToOriginal: false,
+              showCaptions: true,
+            },
+          },
         ],
-        plugins: [`gatsby-remark-images`],
       },
     },
+    `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -70,8 +71,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Chris Shen's Personal Site`,
+        short_name: `Chris Shen`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
