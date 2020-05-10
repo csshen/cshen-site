@@ -22,4 +22,8 @@ cities:
     lat: 43.7102
     long: 7.2620
     radius: 3
+  - city: Monaco
+    lat: 43.7102
+    long: 7.2620
+    radius: 0
 ---

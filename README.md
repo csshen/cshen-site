@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-    <img alt="Gatsby" src="https://raw.githubusercontent.com/csshen/cshen-site/master/public/icons/icon-144x144.png" />
-</p>
+<p align="center"><a href="https://chrisshen.co">
+    <img alt="logo" width="160px" src="https://raw.githubusercontent.com/csshen/cshen-site/master/content/assets/cs-icon.png" />
+</a></p>
 <h1 align="center">chrisshen.co</h1>
 
 <div align="center">
@@ -14,7 +14,15 @@ My personal website, found at [chrisshen.co](https://chrisshen.co). Built with [
 
 ## 🚀 Gatsby Quick Start
 
-1.  **Create a Gatsby site.**
+1.  **Install the Gatsby CLI.**
+
+    Install the Gatsby CLI globally using npm.
+
+    ```sh
+    npm install -g gatsby-cli
+    ```
+
+2.  **Create a Gatsby site.**
 
     Use the Gatsby CLI to create a new site, specifying the blog starter.
 
@@ -23,7 +31,7 @@ My personal website, found at [chrisshen.co](https://chrisshen.co). Built with [
     gatsby new my-blog-starter https://github.com/gatsbyjs/gatsby-starter-blog
     ```
 
-2.  **Start developing.**
+3.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -32,15 +40,10 @@ My personal website, found at [chrisshen.co](https://chrisshen.co). Built with [
     gatsby develop
     ```
 
-3.  **Open the source code and start editing!**
+4.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
     *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*
 
     Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-
-
-
-

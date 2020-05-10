@@ -17,10 +17,11 @@ Also, I recently returned from trip that included
 Japan, Taiwan, and Korea. Head over to [Travelogue](/travelogue) view my photos
 and keep up to date on where I've been.
 
-I hope to add something new to the site regularly, so stay tuned!
+I plan to add some cool projects to the site soon, so stay tuned!
 
-If you're still reading this, here's a little bit about this site — I built it
+Here's a little bit about this site — I built it
 using [Gatsby](https://www.gatsbyjs.org/). Gatsby is super cool static site
 generator built on top of [React](https://reactjs.org/) and
 [GraphQL](https://graphql.org/). It's been a pleasure to use so far, and I
-highly recommend checking it out.
+highly recommend checking it out! You can view the source code for this website
+on [GitHub](https://github.com/csshen/cshen-site#readme) if you're interested.

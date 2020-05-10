@@ -6,24 +6,19 @@
   position: relative;
   background-color: #E5DADA;
   &:hover {
-    color: inherit;
-    svg {
-      transform: scale(1.02);
-    }
+    svg { transform: scale(1.03) }
   }
   svg {
     pointer-events: none;
     vertical-align: top;
-    transition: transform .3s ease-in-out;
-    animation-name: blurin;
-    animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-    animation-duration: 2s;
+    transition: transform .35s ease-in;
+    animation: blurin 2s ease-in-out;
   }
 }
 
 @keyframes blurin {
-  from { filter: blur(10px);}
-  to { filter: blur(0px);}
+  from { filter: blur(8px) }
+  to { filter: blur(0px) }
 }
 
 .overlay {

@@ -53,6 +53,7 @@ module.exports = {
               quality: 80,
               linkImagesToOriginal: false,
               showCaptions: true,
+              markdownCaptions: true,
             },
           },
         ],

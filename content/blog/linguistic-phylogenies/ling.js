@@ -107,8 +107,12 @@ class Ling extends Component {
   }
 
   render() {
-    return (<><svg id={style.graph} height={500} style={{ background }}></svg>
-      <figcaption className='gatsby-resp-image-figcaption'>force directed layout</figcaption></>
+    return (<>
+      <svg id={style.graph} height={500} style={{ background }}></svg>
+      <figcaption className='gatsby-resp-image-figcaption'>
+      Fig 4. Force directed similarity graph of 30+ languages.
+      </figcaption>
+      </>
     );
   }
 }

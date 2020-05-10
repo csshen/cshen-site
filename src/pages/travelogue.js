@@ -8,12 +8,13 @@ import grid from '../styles/photo-gallery.module.scss';
 
 const Travelogue = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
+
   return (
     <SLayout location={location.pathname} title={siteTitle}>
       <SEO title='Travelogue' />
       <div className={grid.grid}>
       {
-        data.countries.edges.map(edge => {
+        data.countries.edges.map((edge, i) => {
           let fm = edge.node.childMdx.frontmatter;
           let cid = fm.translations[0].toLowerCase().replace(/ /g, '-');
           return (
@@ -25,6 +26,7 @@ const Travelogue = ({ data, location }) => {
                 <div>{ fm.date }</div>
               </div>
               <MapChart country={cid} markers={fm.cities}/>
+              {/*<Map id={i} country={cid}/>*/}
             </Link>
           );
         })

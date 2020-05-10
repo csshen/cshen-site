@@ -8,7 +8,6 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.0.5",
     "@mdx-js/mdx": "^1.5.3",
     "@mdx-js/react": "^1.5.3",
     "d3": "^5.14.2",
@@ -33,22 +32,17 @@
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-remark": "^2.8.4",
     "gatsby-transformer-sharp": "^2.2.6",
-    "gsap": "^3.2.6",
     "node-sass": "^4.13.1",
     "octicons-react": "^1.0.4",
     "prismjs": "^1.20.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-feather": "^2.0.3",
     "react-helmet": "^5.2.1",
     "react-images": "^1.1.2",
     "react-simple-maps": "^2.0.0",
     "react-typography": "^0.16.19",
     "styled-components": "^4.3.2",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
-    "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "gatsby-plugin-remove-trailing-slashes": "^2.2.3",

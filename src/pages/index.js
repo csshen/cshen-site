@@ -18,12 +18,7 @@ const BlogIndex = ({ location, data }) => {
         {
           posts.map(({node}) => {
             const { title, date, description, featured, textcolor } = node.frontmatter;
-            let x = null;
-            if (featured) {
-              x = <Img fluid={{ ...featured.childImageSharp.fluid, aspectRatio: 1}} className={ps.image}/>;
-            } else {
-              x = <Img fluid={{ ...data.default.childImageSharp.fluid, aspectRatio: 1}} className={ps.image}/>;
-            }
+            let fluid = featured ? featured.childImageSharp.fluid : data.default.childImageSharp.fluid;
             return (
               <Link to={'/posts'+node.fields.slug} className={ps.tile}>
                 <div className={ps.overlay} style={{color: textcolor || 'black'}}>
@@ -31,7 +26,9 @@ const BlogIndex = ({ location, data }) => {
                   {description}<br/>
                   {date}
                 </div>
-              { x }
+                <Img fluid={{ ...fluid, aspectRatio: 1}}
+                     className={ps.image}
+                     placeholderStyle={{filter: 'blur(8px)'}}/>
               </Link>
             );
           })
@@ -67,7 +64,7 @@ export const pageQuery = graphql`
             featured {
               childImageSharp {
                 fluid(maxWidth: 400) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

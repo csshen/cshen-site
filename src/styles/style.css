@@ -8,7 +8,7 @@ code {
 
 hr {
   clear: both;
-    visibility: hidden;
+  visibility: hidden;
 }
 a {
   text-decoration: none;
@@ -32,19 +32,3 @@ h1 { font-size: 54px }
 h2 { font-size: 42px }
 h3 { font-size: 28px }
 h4 { font-size: 24px }
-
-.nav {
-  color: black !important;
-}
-
-.nav:hover .a {
-  text-decoration: underline;
-}
-.nav:hover .b {
-  transform: translateX(.25em);
-}
-.b {
-  display: inline-block;
-  transition-timing-function: ease-in;
-  transition: 120ms;
-}

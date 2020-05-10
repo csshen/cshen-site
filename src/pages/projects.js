@@ -18,9 +18,13 @@ const Projects = ({ location, data }) => {
             const { title, date, description, featured, textcolor } = node.frontmatter;
             let x = null;
             if (featured) {
-              x = <Img fluid={{ ...featured.childImageSharp.fluid, aspectRatio: 1}} className={ps.image}/>;
+              x = <Img fluid={{ ...featured.childImageSharp.fluid, aspectRatio: 1}}
+                       className={ps.image}
+                       placeholderStyle={{filter: 'blur(8px)'}}/>;
             } else {
-              x = <Img fluid={{ ...data.default.childImageSharp.fluid, aspectRatio: 1}} className={ps.image}/>;
+              x = <Img fluid={{ ...data.default.childImageSharp.fluid, aspectRatio: 1}}
+                       className={ps.image}
+                       placeholderStyle={{filter: 'blur(8px)'}}/>;
             }
             return (
               <Link to={'/posts'+node.fields.slug} className={ps.tile}>
