@@ -12,7 +12,7 @@ const Archive = ({ data, location }) => {
   return (
     <SLayout location={location.pathname} title={siteTitle}>
       <SEO title='Archive' />
-      <div style={{paddingTop: '3em'}}>
+      <div style={{paddingTop: '3.75em'}}>
         <strong className={style.title}>All Posts</strong>
         {
           posts.map(({node}) => {

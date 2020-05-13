@@ -13,7 +13,7 @@ const BlogIndex = ({ location, data }) => {
   const posts = data.mdx.edges;
   return (
     <SLayout location={location.pathname} title={siteTitle}>
-      <SEO title={'Home'} />
+      <SEO />
       <div className={style.grid}>
         {
           posts.map(({node}) => {

@@ -4,7 +4,7 @@ $max-content: 550px;
 /* blog post tags */
 .tag {
   padding: 2px 5px;
-  background-color: #94FBAB;
+  background-color: $tag;
   font-family: 'Inconsolata';
   color: inherit;
   margin: 0.25em;
@@ -53,7 +53,7 @@ $max-content: 550px;
   p {
     margin: 20px;
     a {
-      background-color: #FFB98B;
+      background-color: $external;
       &:before, &:after { content: "\00a0" }
     }
   }
@@ -71,9 +71,7 @@ $max-content: 550px;
   }
   li[id^="fn-"] {
     font-family: 'Inconsolata';
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-bottom: 0;
+    margin: 0 1em;
     a {
       border-bottom: none;
       &:before, &:after { content: "\00a0" }
