@@ -1,5 +1,19 @@
 @import 'variables';
 
+.sidebar {
+  a { &:before, &:after { content: "\00a0"; font-size: 14px; } }
+  width: 250px;
+  font-family: "Inconsolata";
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 2em 0 0 2em;
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+  li { margin-bottom: .1em }
+}
+
 #name {
   font-size: 28px;
   font-weight: 800;
@@ -15,21 +29,27 @@
     background-color: $normal;
   }
 }
-.nlink_active {
-  background-color: $normal;
+.nlink-active {
   cursor: default;
+  background-color: $normal;
 }
+
 // heading link
 .hlink {
   color: inherit;
   &:hover {
-    color: inherit;
-    background-color: $heading;
+    &:after {
+      content: " •" !important;
+      color: red;
+    }
   }
 }
-.hlink_active {
-  background-color: $heading;
+.hlink-active {
   cursor: default;
+  &:after {
+    content: " •" !important;
+    color: red;
+  }
 }
 // external
 .elink {
@@ -38,18 +58,4 @@
     color: inherit;
     background-color: $external;
   }
-}
-
-.sidebar {
-  a { &:before, &:after { content: "\00a0"; font-size: 14px; } }
-  width: 250px;
-  font-family: "Inconsolata";
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.75);
-  padding: 2em 0 0 2em;
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-  }
-  li { margin-bottom: .1em }
 }

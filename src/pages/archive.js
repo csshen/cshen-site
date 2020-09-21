@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import SLayout from '../components/slayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import style from '../styles/archive.module.scss';
 
@@ -10,7 +10,7 @@ const Archive = ({ data, location }) => {
   // const tags = data.tags.group;
 
   return (
-    <SLayout location={location.pathname} title={siteTitle}>
+    <Layout location={location.pathname} title={siteTitle}>
       <SEO title='Archive' />
       <div style={{paddingTop: '3.75em'}}>
         <strong className={style.title}>All Posts</strong>
@@ -26,7 +26,7 @@ const Archive = ({ data, location }) => {
           })
         }
       </div>
-    </SLayout>
+    </Layout>
   );
 }
 

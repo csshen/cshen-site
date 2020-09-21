@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import SLayout from '../components/slayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
 import style from '../styles/photo-gallery.module.scss';
@@ -10,7 +10,7 @@ const Projects = ({ location, data }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.mdx.edges;
   return (
-    <SLayout location={location.pathname} title={siteTitle}>
+    <Layout location={location.pathname} title={siteTitle}>
       <SEO title='Projects' />
       <div className={style.grid}>
         {
@@ -39,7 +39,7 @@ const Projects = ({ location, data }) => {
           })
         }
       </div>
-    </SLayout>
+    </Layout>
   );
 }
 

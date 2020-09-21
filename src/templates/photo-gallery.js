@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import SLayout from '../components/slayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import style from '../styles/photo-gallery.module.scss';
@@ -26,7 +26,7 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
    });
 
   return (
-    <SLayout location={location.pathname} title={siteTitle}>
+    <Layout location={location.pathname} title={siteTitle}>
       <SEO title={pageContext.title} />
       <ModalGateway>
         {modalVisibility ? (
@@ -36,7 +36,7 @@ const PhotoGalleryTemplate = ({ pageContext, location, data }) => {
         ) : null}
       </ModalGateway>
       <div className={style.grid}>{ imgs }</div>
-    </SLayout>
+    </Layout>
   );
 }
 

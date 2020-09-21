@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import SLayout from '../components/slayout';
+import Layout from '../components/layout';
 import MapChart from '../components/MapChart/MapChart';
 import SEO from '../components/seo';
 import style from '../styles/travelogue.module.scss';
@@ -10,7 +10,7 @@ const Travelogue = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <SLayout location={location.pathname} title={siteTitle}>
+    <Layout location={location.pathname} title={siteTitle}>
       <SEO title='Travelogue' />
       <div className={grid.grid}>
       {
@@ -32,7 +32,7 @@ const Travelogue = ({ data, location }) => {
         })
       }
       </div>
-    </SLayout>
+    </Layout>
   );
 }
 

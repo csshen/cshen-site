@@ -1,0 +1,38 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  font-size: 14px;
+  @media screen and (max-width: 550px) {
+    flex-basis: 100vw;
+  }
+}
+
+footer {
+  font-family: "Inconsolata";
+  color: inherit;
+  font-size: 14px;
+  padding-left: 2em;
+  flex-basis: 100vw;
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+  li { margin-bottom: .1em }
+}
+
+.mobile-hidden {
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+}
+
+.desktop-hidden {
+  @media screen and (min-width: 550px) {
+    display: none;
+  }
+}

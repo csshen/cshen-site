@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import SLayout from '../components/slayout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import style from '../styles/archive.module.scss';
 
@@ -12,7 +12,7 @@ const Tags = ({ data, pageContext, siteTitle, location }) => {
     .join(' ');
 
   return (
-    <SLayout location={location.pathname} title={siteTitle}>
+    <Layout location={location.pathname} title={siteTitle}>
       <SEO title={tag} />
       <div style={{paddingTop: '3em'}}>
         <div className={style.title}>Posts / <strong>{tag}</strong></div>
@@ -28,7 +28,7 @@ const Tags = ({ data, pageContext, siteTitle, location }) => {
           })
         }
       </div>
-    </SLayout>
+    </Layout>
   );
 }
 

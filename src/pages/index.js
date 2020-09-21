@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../components/seo';
-import SLayout from '../components/slayout';
+import Layout from '../components/layout';
+
 import '../styles/style.css';
 import style from '../styles/photo-gallery.module.scss';
 import ps from '../styles/projects.module.scss';
@@ -12,7 +13,7 @@ const BlogIndex = ({ location, data }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.mdx.edges;
   return (
-    <SLayout location={location.pathname} title={siteTitle}>
+    <Layout location={location.pathname} title={siteTitle}>
       <SEO />
       <div className={style.grid}>
         {
@@ -34,7 +35,7 @@ const BlogIndex = ({ location, data }) => {
           })
         }
       </div>
-    </SLayout>
+    </Layout>
   );
 }
 

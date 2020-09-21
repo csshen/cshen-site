@@ -1,8 +1,8 @@
 import React from 'react';
 import Sidebar from './sidebar';
-import style from './slayout.module.scss';
+import style from '../styles/layout.module.scss';
 
-const SLayout = ({ location, title, children, padding='2em' }) => {
+const Layout = ({ location, title, children, padding='2em' }) => {
   //const rootPath = `${__PATH_PREFIX__}/`;
   return (
     <div className={style.flex}>
@@ -12,4 +12,4 @@ const SLayout = ({ location, title, children, padding='2em' }) => {
   );
 }
 
-export default SLayout;
+export default Layout;

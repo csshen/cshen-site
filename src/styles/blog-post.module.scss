@@ -1,37 +1,25 @@
 @import 'variables';
 $max-content: 550px;
 
-/* blog post tags */
-.tag {
-  padding: 2px 5px;
-  background-color: $tag;
-  font-family: 'Inconsolata';
-  color: inherit;
-  margin: 0.25em;
-  border-radius: 2px;
-}
-
-/* previous and next navigation links */
-.navlink {
-  color: inherit;
-  transition: 0s;
-  &:hover {
-    color: inherit;
-    background-color: $normal;
-  }
-  &:before, &:after { content: "\00a0" }
-}
-
 /* Blog post info - title, subtitle, description, etc. */
 .heading {
   font-family: 'Work Sans', sans-serif;
   padding: 0 20px;
+  @media screen and (max-width: 550px) {
+    text-align: center;
+  }
 }
 #title {
   font-weight: 700;
   font-size: 28px;
-  line-height: 1.5;
+  line-height: 1.15;
+  margin-bottom: .5em;
+  margin-top: 3em;
+  @media screen and (max-width: 550px) {
+    margin-top: 1em;
+  }
 }
+
 #subtitle, #date {
   font-size: 14px;
   font-family: "Inconsolata";
@@ -39,8 +27,14 @@ $max-content: 550px;
   color: #696969;
 }
 
+#divider {
+  @media screen and (min-width: 550px) {
+    display: none;
+  }
+}
+
 .mdx {
-  margin: 5em auto;
+  margin-bottom: 5em;
   font-family: 'Work Sans', sans-serif;
   color: #3F3F3F;
   line-height: 1.65;
@@ -53,8 +47,10 @@ $max-content: 550px;
   p {
     margin: 20px;
     a {
-      background-color: $external;
-      &:before, &:after { content: "\00a0" }
+      border-bottom: 2px dotted #EF3E36;
+      &:hover {
+        border-bottom: 2px solid #EF3E36;
+      }
     }
   }
   h3 { margin: 20px; font-family: 'Work Sans', sans-serif;}
@@ -77,5 +73,41 @@ $max-content: 550px;
       &:before, &:after { content: "\00a0" }
       &:hover { background: $external }
     }
+  }
+}
+
+
+/* blog post tags */
+.tag {
+  padding: 2px 5px;
+  background-color: $tag;
+  font-family: 'Inconsolata';
+  color: inherit;
+  margin: 0.25em;
+  border-radius: 2px;
+}
+
+/* previous and next navigation links */
+.navlink {
+  color: inherit;
+  transition: 0s;
+  &:hover {
+    color: inherit;
+    background-color: $normal;
+  }
+  &:before, &:after { content: "\00a0" }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFFBFA;
+  color: black;
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  @media screen and (min-width: 550px) {
+    display: none;
   }
 }
